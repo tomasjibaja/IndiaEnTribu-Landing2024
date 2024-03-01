@@ -1,0 +1,114 @@
+:root {
+    --naranja: #fa853f;
+    --fucsia: #e92591;
+    --white-70: rgba(255,255,255,.7); 
+    --white-90: rgba(255,255,255,.9); 
+    --black-10: rgba(0,0,0,.1); 
+    --black-20: rgba(0,0,0,.2); 
+    --fucsia-20: rgba(210,0,120,.2);
+    --fucsia-50: rgba(210,0,120,.5);
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-image: linear-gradient(to bottom right, var(--naranja), var(--fucsia));
+    padding: 0;
+    margin: 0;
+}
+
+#form-container {
+    position: relative;
+    width: 90%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--fucsia-20);
+    border: 1px solid var(--white-70);
+    border-radius: 9px;
+    margin: 50px auto;
+}
+
+#form-title {
+    text-align: center;
+    font-weight: 300;
+    font-size: 20px;
+    margin: 50px auto;
+}
+
+label {
+    color: var(--white-70);
+    font-size: 12px;
+    margin-left: 3px;
+}
+
+.form-field {
+    background-color: var(--black-10);
+    border: transparent;
+    border-radius: 3px;
+    width: 230px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+    color: #fff;
+    margin-top: 3px;
+    padding-left: 7px;
+}
+
+.form-field:focus {
+    outline: none;
+}
+
+input {
+    display: block;
+    margin: 18px auto;
+}
+
+#submit {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    height: 50px;
+    width: 180px;
+    border-radius: 90px;
+    border: 2px solid rgba(250,200,225,.5);
+    background-image: linear-gradient(to right, var(--fucsia), var(--naranja));
+    color: var(--white-90);
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#submit:active {
+    background-image: linear-gradient(var(--black-10), var(--black-20));
+}
+
+#form-msg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 9px;
+    text-align: center;
+    color: var(--white-90);
+    transition: opacity .3s linear;
+    font-size: 14px;
+}
+
+.blinking {
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    0% {filter: brightness(1);}
+    50% {filter: brightness(.8);}
+    100% {filter: brightness(1);}
+}

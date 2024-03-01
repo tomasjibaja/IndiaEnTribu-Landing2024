@@ -9,11 +9,17 @@
 <body>
     <div id="form-container">
         <form method="post" action="" name="contact-form" id="contact-form">
-            <h4>CONTACTANOS</h4>
-            <input type="text" name="nombre" placeholder="Tu nombre">
-            <input type="text" name="telefono" placeholder="Número de contacto">
-            <input type="email" name="email" placeholder="Correo electrónico">
-            <input type="submit" value="Submit" id="submit">
+            <h4 id="form-title">CONTACTANOS</h4>
+            <label for="nombre">Nombre completo</label>
+            <input class="form-field" type="text" name="nombre" value="">
+
+            <label for="telefono">Número de contacto</label>
+            <input class="form-field" type="tel" name="telefono" value="">
+
+            <label for="email">Correo electrónico</label>
+            <input class="form-field" type="email" name="email" value="">
+            <input type="submit" value="Enviar" id="submit">
+            <p id="form-msg"></p>
         </form>
     </div>
     
