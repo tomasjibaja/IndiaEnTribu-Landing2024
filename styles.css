@@ -52,7 +52,8 @@ label {
 
 .form-field {
     background-color: var(--black-10);
-    border: transparent;
+    outline: 1px solid transparent;
+    border: none;
     border-radius: 3px;
     width: 230px;
     height: 30px;
@@ -61,10 +62,15 @@ label {
     color: #fff;
     margin-top: 3px;
     padding-left: 7px;
+    transition: all .3s linear;
 }
 
 .form-field:focus {
-    outline: none;
+    outline-color: var(--black-20);
+}
+
+.form-field:valid {
+    outline: 1px solid olivedrab;
 }
 
 input {
@@ -101,6 +107,7 @@ input {
     color: var(--white-90);
     transition: opacity .3s linear;
     font-size: 14px;
+    opacity: 0;
 }
 
 .blinking {

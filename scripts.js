@@ -8,12 +8,12 @@ const formCont = document.getElementById('form-container');
 form.addEventListener('submit', e => {
     submitBtn.style.opacity = .5;
     submitBtn.style.zIndex = -1;
+    formCont.style.zIndex = -1;
     formCont.classList.add('blinking');
     e.preventDefault()
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
     .then(response => submitOk())
     .catch(error => console.error('Error!', error.message))
-
 })
 
 function submitOk() {
