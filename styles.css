@@ -1,3 +1,4 @@
+/* VARIABLES DE COLOR */
 :root {
     --violeta: #661066;
     --naranja-soft: #ffa22c;
@@ -16,10 +17,14 @@
     --fucsia-50: rgba(210,0,120,.5);
 }
 
+
+
+
+/* GLOBALES */
 html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: content-box;
     color: #fff;
     font-family: "Open Sans", sans-serif;
 }
@@ -30,6 +35,131 @@ body {
     margin: 0;
 }
 
+.blinking {
+    animation: blink 1s linear infinite;
+}
+
+.white-btn {
+    border: 2px solid var(--white-70);
+    border-radius: 36px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: transparent;
+    color: var(--white-90);
+}
+
+.white-btn:active {
+    background-color: var(--white-30);
+    color: var(--black-10);
+}
+
+
+
+
+/* ANIMACIONES */
+@keyframes shadow {
+    from {filter: drop-shadow(0 9px 7px transparent);}
+    to {filter: drop-shadow(0 9px 7px var(--black-20))
+                drop-shadow(0 9px 9px var(--black-10));}
+}
+
+@keyframes lighten {
+    from {filter: drop-shadow(0 -3px 3px transparent);}
+    to {filter: drop-shadow(0 -3px 3px var(--white-30));}
+}
+
+@keyframes cinema {
+    0% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes appear {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes pop {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    33% {
+        opacity: 1;
+        transform: scale(1.4);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes planefly {
+    0% {
+        opacity: 1;
+        transform: translate(0)
+                    rotate(20deg);
+    }
+    10% {
+        transform: translate(50px,30px)
+        rotate(0deg);
+    }
+    22% {
+        transform: translate(110px,-10px)
+        rotate(-90deg);
+    }
+    34% {
+        transform: translate(60px,-40px)
+        rotate(-180deg);
+    }
+    46% {
+        transform: translate(30px,-10px)
+        rotate(-270deg);
+    }
+    58% {
+        transform: translate(50px,50px)
+        rotate(-360deg);
+    }
+    70% {
+        transform: translate(150px,27px)
+        rotate(-380deg);
+    }
+    80% {
+        transform: translate(220px,-15px)
+        rotate(-365deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(330px,-8px)
+        rotate(-355deg);
+    }
+}
+
+@keyframes appearblinking {
+    0% {opacity: 0;}
+    20% {opacity: 1;}
+    40% {opacity: 0.3;}
+    60% {opacity: 1;}
+    80% {opacity: 0.3;}
+    100% {opacity: 1;}
+}
+
+@keyframes blink {
+    0% {filter: brightness(1);}
+    50% {filter: brightness(.8);}
+    100% {filter: brightness(1);}
+}
+
+/* ANIMACIONES */
+
+
+
+
+/* MAIN */
 main {
     height: 100vh;
     display: grid;
@@ -44,17 +174,6 @@ main {
 #animation-wrapper {
     transform: scale(.4);
     position: absolute;
-}
-
-@keyframes shadow {
-    from {filter: drop-shadow(0 9px 7px transparent);}
-    to {filter: drop-shadow(0 9px 7px var(--black-20))
-                drop-shadow(0 9px 9px var(--black-10));}
-}
-
-@keyframes lighten {
-    from {filter: drop-shadow(0 -3px 3px transparent);}
-    to {filter: drop-shadow(0 -3px 3px var(--white-30));}
 }
 
 #animation-container {
@@ -72,15 +191,6 @@ main {
 
 #anim-india {
     animation: shadow 1s ease forwards 2.5s;
-}
-
-@keyframes cinema {
-    0% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
 }
 
 #anim-lotus {
@@ -142,11 +252,6 @@ main {
                 appear .7s ease-in forwards 1.2s;
 }
 
-@keyframes appear {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
 #anim-plane {
     width: 50px;
     position: absolute;
@@ -156,81 +261,28 @@ main {
     animation: planefly .9s linear forwards .9s;
 }
 
-@keyframes pop {
-    0% {
-        opacity: 0;
-        transform: scale(1);
-    }
-    33% {
-        opacity: 1;
-        transform: scale(1.4);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes planefly {
-    0% {
-        opacity: 1;
-        transform: translate(0)
-                    rotate(20deg);
-    }
-    10% {
-        transform: translate(50px,30px)
-        rotate(0deg);
-    }
-    22% {
-        transform: translate(110px,-10px)
-        rotate(-90deg);
-    }
-    34% {
-        transform: translate(60px,-40px)
-        rotate(-180deg);
-    }
-    46% {
-        transform: translate(30px,-10px)
-        rotate(-270deg);
-    }
-    58% {
-        transform: translate(50px,50px)
-        rotate(-360deg);
-    }
-    70% {
-        transform: translate(150px,27px)
-        rotate(-380deg);
-    }
-    80% {
-        transform: translate(220px,-15px)
-        rotate(-365deg);
-    }
-    100% {
-        opacity: 1;
-        transform: translate(330px,-8px)
-        rotate(-355deg);
-    }
-}
-
 #arrow-splash {
     opacity: 0;
     position: absolute;
-    bottom: 30px;
+    bottom: 20px;
+    font-size: 30px;
     text-align: center;
     transform: rotate(90deg);
-    font-size: 40px;
-    animation: appearblinking 2s ease forwards 2.7s;
+    animation: appearblinking 2s ease forwards 3.6s;
 }
 
-@keyframes appearblinking {
-    0% {opacity: 0;}
-    20% {opacity: 1;}
-    40% {opacity: 0.5;}
-    60% {opacity: 1;}
-    80% {opacity: 0.5;}
-    100% {opacity: 1;}
+main > .white-btn {
+    opacity: 0;
+    position: absolute;
+    top: 30px;
+    animation: appear 2s ease forwards 2.7s;
 }
+/* MAIN */
 
+
+
+
+/* HERO1 */
 #hero1 {
     width: 100vw;
     height: 700px;
@@ -239,7 +291,12 @@ main {
     background-position: center;
     box-shadow: 0 10px 30px 9px var(--black-20) inset;
 } 
+/* HERO1 */
 
+
+
+
+/* INFO1 */
 #info1 {
     margin: 0;
     padding: 0;
@@ -248,20 +305,40 @@ main {
         var(--violeta),
         var(--fucsia),
         var(--fucsia0));
-    height: 50vh;
     display: grid;
     place-items: center;
     box-shadow: 0 0 18px 1px var(--black-20);
 }
 
+#info1 > h2 {
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+}
+
+#info1 > p {
+    font-size: 14px;
+    padding: 10px 50px;
+}
+
+#info1 > .white-btn {
+    margin: 50px 18px;
+}
+/* INFO1 */
+
+
+
+
+/* FOTOS */
 #fotos {
     background-color: var(--crema);
     padding: 20px 0;
     box-shadow: 0 0 18px 9px var(--black-20) inset;
 }
 
-#foto-title {
-    font-size: 30px;
+#fotos > h2 {
+    font-size: 40px;
+    font-weight: 900;
     background-image: linear-gradient(
         to top right,
         var(--naranja-strong),
@@ -271,10 +348,16 @@ main {
     text-align: center;
 }
 
+#fotos > p {
+    font-size: 14px;
+    padding: 18px 50px;
+    text-align: right;
+    color: #724;
+}
+
 #cards-container {
     width: 100vw;
     display: grid;
-    gap: -100px;
     grid-auto-flow: column;
     scroll-behavior: smooth;
     overflow-y: auto;
@@ -338,11 +421,12 @@ main {
     left: 21px;
 }
 
-#fotos > p {
-    padding: 18px 25px;
-    text-align: center;
-    color: var(--naranja-strong);
-}
+/* FOTOS */
+
+
+
+
+/* HERO2 */
 
 #hero2 {
     width: 100vw;
@@ -353,7 +437,13 @@ main {
     box-shadow: 0 10px 30px 9px var(--black-20) inset;
 } 
 
-#form {
+/* HERO2 */
+
+
+
+/* FOOT */
+
+#foot {
     min-height: 100vh;
     display: grid;
     place-items: center;
@@ -364,29 +454,59 @@ main {
             var(--fucsia0));
 }
 
+/* FOOT */
+
+/* MODAL CONTACTO */
+
+#contact-modal {
+    opacity: 0;
+    z-index: -1;
+    transition: all .7s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-image: 
+        linear-gradient(
+            to top right,
+            var(--fucsia),
+            var(--violeta)
+        );
+}
+
 #form-container {
     position: relative;
-    width: 90%;
-    height: 500px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
     background-color: var(--fucsia-20);
-    border: 1px solid var(--white-70);
+    border: 1px solid var(--white-30);
     border-radius: 9px;
+}
+
+#form-cross {
+    font-size: 25px;
+    position: absolute;
+    top: 15px;
+    right: 30px;
 }
 
 #form-title {
     text-align: center;
-    font-weight: 300;
-    font-size: 20px;
+    font-weight: 700;
+    font-size: 30px;
     margin: 50px auto;
 }
 
 label {
     color: var(--white-70);
     font-size: 12px;
-    margin-left: 3px;
+    margin-left: 50px;
 }
 
 .form-field {
@@ -418,23 +538,25 @@ input {
 }
 
 #submit {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 50px;
-    height: 50px;
-    width: 180px;
-    border-radius: 90px;
+    margin: 50px;
+    padding: 18px;
+    width: 230px;
+    border-radius: 12px;
     border: 2px solid rgba(250,200,225,.5);
-    background-image: linear-gradient(to right, var(--fucsia0), var(--naranja0));
+    background-image: 
+        linear-gradient(
+            to right,
+            var(--fucsia0),
+            var(--violeta)
+        );
     color: var(--white-90);
-    font-size: 18px;
+    font-size: 21px;
     font-weight: 700;
     cursor: pointer;
 }
 
 #submit:active {
-    background-image: linear-gradient(var(--black-10), var(--black-20));
+    background-image: linear-gradient(to right, var(--naranja-strong), var(--fucsia));
 }
 
 #form-msg {
@@ -449,16 +571,11 @@ input {
     opacity: 0;
 }
 
-.blinking {
-    animation: blink 1s linear infinite;
-}
+/* MODAL CONTACTO */
 
-@keyframes blink {
-    0% {filter: brightness(1);}
-    50% {filter: brightness(.8);}
-    100% {filter: brightness(1);}
-}
 
+
+/* MEDIA QUERIES */
 
 @media only screen and (min-width: 768px) {
     #animation-wrapper {
@@ -469,6 +586,11 @@ input {
         height: 700px;
         width: 70vw;
         margin: 15vw;
+    } 
+
+    #arrow-splash {
+        bottom: 30px;
+        font-size: 30px;
     }
 }
 

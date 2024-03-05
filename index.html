@@ -30,16 +30,13 @@
                 <img id="anim-plane" src="./img/plane--.png" alt="">
             </div>
         </div>
+        <button class="white-btn">CONTACTO</button>
         <span id="arrow-splash">&#x276F;</span>
     </main>
 
-    <div id="hero1"></div>
-
-    <section id="info1">
-        <h2>UN TÍTULO COPADO</h2>
-    </section>
-
     <section id="fotos">
+        <h2>TÍTULO UNO</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet fuga placeat dolore dolorem perspiciatis voluptatibus voluptatum eligendi impedit. Cum ab quas tempora assumenda esse voluptate iure odio natus voluptas modi?</p>
         <div id="cards-container">
             <div class="card">
                 <span>AGRA</span>
@@ -61,10 +58,23 @@
             </div>
         </div>
     </section>
+
+    <div id="hero1"></div>
+
+    <section id="info1">
+        <h2>TÍTULO DOS</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure molestias earum in quisquam praesentium? Delectus veritatis ducimus explicabo beatae ullam, saepe, eligendi ipsum hic exercitationem eos necessitatibus! Blanditiis, nobis eaque.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus deleniti ipsa eum culpa, quos, at hic rerum corrupti nihil nostrum numquam voluptates rem animi vitae. Minima, pariatur consequatur. Error, cum!</p>
+        <button class="white-btn" onclick="showModal()">CONTACTO</button>
+    </section>
     
     <div id="hero2"></div>
 
-    <section id="form">
+    <section id="foot">
+
+    </section>
+
+    <div id="contact-modal">
         <div id="form-container">
             <form method="post" action="" name="contact-form" id="contact-form">
                 <h4 id="form-title">CONTACTANOS</h4>
@@ -76,11 +86,12 @@
     
                 <label for="email">Correo electrónico</label>
                 <input class="form-field" type="email" name="email" required>
-                <input type="submit" value="Enviar" id="submit">
+                <input type="submit" value="ENVIAR" id="submit">
                 <p id="form-msg"></p>
             </form>
         </div>
-    </section>
+        <span id="form-cross" onclick="hideModal()">&#10005;</span>
+    </div>
     
     <script src="scripts.js"></script>
 </body>
