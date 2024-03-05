@@ -47,6 +47,7 @@ body {
     font-weight: 700;
     background-color: transparent;
     color: var(--white-90);
+    cursor: pointer;
 }
 
 .white-btn:active {
@@ -494,6 +495,7 @@ main > .white-btn {
     position: absolute;
     top: 15px;
     right: 30px;
+    cursor: pointer;
 }
 
 #form-title {

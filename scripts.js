@@ -4,7 +4,7 @@ const formMsg = document.getElementById('form-msg');
 const submitBtn = document.getElementById('submit');
 const formCont = document.getElementById('form-container');
 
-const cards = document.querySelectorAll('card');
+const contactModal = document.getElementById('contact-modal');
 
 form.addEventListener('submit', e => {
     submitBtn.style.opacity = .5;
@@ -23,4 +23,14 @@ function submitOk() {
     formMsg.style.opacity = 1;
 
     form.reset();
+}
+
+function showModal() {
+    contactModal.style.opacity = 1;
+    contactModal.style.zIndex = 1;
+}
+
+function hideModal() {
+    contactModal.style.opacity = 0;
+    contactModal.style.zIndex = -1;
 }
