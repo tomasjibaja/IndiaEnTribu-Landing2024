@@ -6,6 +6,13 @@ const formCont = document.getElementById('form-container');
 
 const contactModal = document.getElementById('contact-modal');
 
+const countdownDays = document.getElementById('cd-d');
+const countdownHours = document.getElementById('cd-h');
+const countdownMinutes = document.getElementById('cd-m');
+const countdownSeconds = document.getElementById('cd-s');
+
+var countdownDate = new Date("Sep 9, 2024 10:00:00").getTime();
+
 form.addEventListener('submit', e => {
     submitBtn.style.opacity = .5;
     submitBtn.style.zIndex = -1;
@@ -34,3 +41,21 @@ function hideModal() {
     contactModal.style.opacity = 0;
     contactModal.style.zIndex = -1;
 }
+
+// COUNTDOWN
+
+var countdown = setInterval(function() {
+    var now = new Date().getTime();
+
+    var timeleft = countdownDate - now;
+
+    var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+    countdownDays.innerHTML = `${days}<span>días</span>`;
+    countdownHours.innerHTML = `${hours}<span>horas</span>`;
+    countdownMinutes.innerHTML = `${minutes}<span>minutos</span>`;
+    countdownSeconds.innerHTML = `${seconds.toString().padStart(2,'0')}<span>segundos</span>`;
+}, 1000);
