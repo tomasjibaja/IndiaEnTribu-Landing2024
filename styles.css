@@ -1,6 +1,13 @@
 :root {
-    --naranja: #fa853f;
-    --fucsia: #e92591;
+    --violeta: #661066;
+    --naranja-soft: #ffa22c;
+    --naranja-strong: #ff6634;
+    --fucsia: #eb2492;
+    --crema: #f5f3e9;
+
+    --naranja0: #fa853f;
+    --fucsia0: #e92591;
+    --white-30: rgba(255,255,255,.3);
     --white-70: rgba(255,255,255,.7); 
     --white-90: rgba(255,255,255,.9); 
     --black-10: rgba(0,0,0,.1); 
@@ -12,14 +19,13 @@
 html {
     margin: 0;
     padding: 0;
-    box-sizing: content-box;
+    box-sizing: border-box;
     color: #fff;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 body {
     height: 100vh;
-    background-image: linear-gradient(to bottom right, var(--naranja), var(--fucsia));
     padding: 0;
     margin: 0;
 }
@@ -28,6 +34,27 @@ main {
     height: 100vh;
     display: grid;
     place-items: center;
+    background-image: 
+        linear-gradient(
+            to bottom right, 
+            var(--naranja0), 
+            var(--fucsia0));
+}
+
+#animation-wrapper {
+    transform: scale(.4);
+    position: absolute;
+}
+
+@keyframes shadow {
+    from {filter: drop-shadow(0 9px 7px transparent);}
+    to {filter: drop-shadow(0 9px 7px var(--black-20))
+                drop-shadow(0 9px 9px var(--black-10));}
+}
+
+@keyframes lighten {
+    from {filter: drop-shadow(0 -3px 3px transparent);}
+    to {filter: drop-shadow(0 -3px 3px var(--white-30));}
 }
 
 #animation-container {
@@ -41,6 +68,10 @@ main {
     gap: 0;
     transform: scale(1.1);
     animation: cinema 1.2s ease forwards 1.2s;
+}
+
+#anim-india {
+    animation: shadow 1s ease forwards 2.5s;
 }
 
 @keyframes cinema {
@@ -58,7 +89,8 @@ main {
     width: 75px;
     left: 9px;
     top: 162px;
-    animation: pop .3s linear forwards 1.8s;
+    animation: pop .3s linear forwards 2.2s,
+               lighten .9s ease forwards 2.7s;
 }
 
 #anim-entribu {
@@ -182,6 +214,107 @@ main {
     }
 }
 
+#fotos {
+    min-height: 100vh;
+    background-color: var(--crema);
+    padding-top: 20px;
+}
+
+#foto-title {
+    font-size: 30px;
+    background-image: linear-gradient(
+        to top right,
+        var(--naranja-strong),
+        var(--fucsia));
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+}
+
+#cards-container {
+    width: 100vw;
+    display: grid;
+    gap: -100px;
+    grid-auto-flow: column;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+#cards-container::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    position: relative;
+    margin: 5vw;
+    scroll-snap-align: inherit;
+    border-radius: 21px;
+    height: 400px;
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+    border: 1px solid #999;
+    box-shadow: 0 3px 9px 3px var(--black-20),
+                0 -50px 100px 3px black inset;
+}
+
+.card:nth-of-type(1) {
+    background-image: url(./img/cards/agra.jpg);
+}
+
+.card:nth-of-type(2) {
+    background-image: url(./img/cards/delhi.png);
+    background-size: auto;
+}
+
+.card:nth-of-type(3) {
+    background-image: url(./img/cards/pushkar.jpg);
+}
+
+.card:nth-of-type(4) {
+    background-image: url(./img/cards/rishikesh.jpg);
+}
+
+.card:nth-of-type(5) {
+    background-image: url(./img/cards/varanasi.jpg);
+}
+
+.card > span {
+    position: absolute;
+    color: var(--white-70);
+    bottom: 18px;
+    left: 21px;
+}
+
+#fotos > p {
+    padding: 18px 25px;
+    text-align: center;
+    color: var(--naranja-strong);
+}
+
+#parallax-wrapper {
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+#form {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-image: 
+        linear-gradient(
+            to bottom right, 
+            var(--naranja0), 
+            var(--fucsia0));
+}
+
 #form-container {
     position: relative;
     width: 90%;
@@ -192,7 +325,6 @@ main {
     background-color: var(--fucsia-20);
     border: 1px solid var(--white-70);
     border-radius: 9px;
-    margin: 50px auto;
 }
 
 #form-title {
@@ -245,7 +377,7 @@ input {
     width: 180px;
     border-radius: 90px;
     border: 2px solid rgba(250,200,225,.5);
-    background-image: linear-gradient(to right, var(--fucsia), var(--naranja));
+    background-image: linear-gradient(to right, var(--fucsia0), var(--naranja0));
     color: var(--white-90);
     font-size: 18px;
     font-weight: 700;
@@ -280,5 +412,19 @@ input {
 
 
 @media only screen and (min-width: 768px) {
-    
+    #animation-wrapper {
+        transform: scale(.6);
+    }
+
+    .card {
+        height: 700px;
+        width: 70vw;
+        margin: 15vw;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    #animation-wrapper {
+        transform: scale(.8);
+    }
 }

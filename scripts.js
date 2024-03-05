@@ -1,9 +1,10 @@
 const scriptURL = 'https://script.google.com/macros/s/AKfycbyYyY62UQlrx2mq8TXbkyciTvzuTu3_3W-xgLXzWBuihpv-hJmLiWf3hm840NWHKFMzGQ/exec';
-
 const form = document.forms['contact-form'];
 const formMsg = document.getElementById('form-msg');
 const submitBtn = document.getElementById('submit');
 const formCont = document.getElementById('form-container');
+
+const cards = document.querySelectorAll('card');
 
 form.addEventListener('submit', e => {
     submitBtn.style.opacity = .5;

@@ -6,44 +6,74 @@
     <link rel="stylesheet" href="styles.css">
     <title>India en tribu 2024</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon.ico">
 </head>
 <body>
     <main>
-        <div id="animation-container">
-            <div id="anim-india">
-                <img src="./img/I--.png" alt="">
-                <img src="./img/N--.png" alt="">
-                <img src="./img/D--.png" alt="">
-                <img src="./img/I--.png" alt="">
-                <img src="./img/A--.png" alt="">
+        <div id="animation-wrapper">
+            <div id="animation-container">
+                <div id="anim-india">
+                    <img src="./img/I--.png" alt="">
+                    <img src="./img/N--.png" alt="">
+                    <img src="./img/D--.png" alt="">
+                    <img src="./img/I--.png" alt="">
+                    <img src="./img/A--.png" alt="">
+                </div>
+                <div>
+                    <img id="anim-path" src="./img/path--.png" alt="">
+                    <img id="anim-entribu" src="./img/entribu--.png">
+                </div>
+                <img id="anim-lotus" src="./img/lotus--.png" alt="">
+                <img id="anim-plane" src="./img/plane--.png" alt="">
             </div>
-            <div>
-                <img id="anim-path" src="./img/path--.png" alt="">
-                <img id="anim-entribu" src="./img/entribu--.png">
-            </div>
-            <img id="anim-lotus" src="./img/lotus--.png" alt="">
-            <img id="anim-plane" src="./img/plane--.png" alt="">
         </div>
     </main>
 
-    <div id="form-container">
-        <form method="post" action="" name="contact-form" id="contact-form">
-            <h4 id="form-title">CONTACTANOS</h4>
-            <label for="nombre">Nombre completo</label>
-            <input class="form-field" type="text" name="nombre" required>
+    <section id="fotos">
+        <div id="cards-container">
+            <div class="card">
+                <span>AGRA</span>
+            </div>
+            <div class="card">
+                <span>DELHI</span>
+            </div>
+            <div class="card">
+                <span>PUSHKAR</span>
+            </div>
+            <div class="card">
+                <span>RISHIKESH</span>
+            </div>
+            <div class="card">
+                <span>VARANASI</span>
+            </div>
+        </div>
+        <h2 id="foto-title">TÍTULO</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ullam distinctio, adipisci saepe eius quae dignissimos asperiores natus eligendi quibusdam veritatis? In fugiat facere impedit exercitationem dicta, quos alias ullam.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint ducimus perferendis doloremque voluptate quae asperiores in at nihil minus aut voluptatem qui quis, aliquid vel a veniam nam. Amet, reiciendis?</p>
+        <br>
+    </section>
+    
 
-            <label for="telefono">Número de contacto</label>
-            <input class="form-field" type="tel" name="telefono" required>
-
-            <label for="email">Correo electrónico</label>
-            <input class="form-field" type="email" name="email" required>
-            <input type="submit" value="Enviar" id="submit">
-            <p id="form-msg"></p>
-        </form>
-    </div>
+    <section id="form">
+        <div id="form-container">
+            <form method="post" action="" name="contact-form" id="contact-form">
+                <h4 id="form-title">CONTACTANOS</h4>
+                <label for="nombre">Nombre completo</label>
+                <input class="form-field" type="text" name="nombre" required>
+    
+                <label for="telefono">Número de contacto</label>
+                <input class="form-field" type="tel" name="telefono" required>
+    
+                <label for="email">Correo electrónico</label>
+                <input class="form-field" type="email" name="email" required>
+                <input type="submit" value="Enviar" id="submit">
+                <p id="form-msg"></p>
+            </form>
+        </div>
+    </section>
     
     <script src="scripts.js"></script>
 </body>
