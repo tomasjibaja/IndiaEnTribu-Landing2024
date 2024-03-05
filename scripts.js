@@ -11,6 +11,12 @@ const countdownHours = document.getElementById('cd-h');
 const countdownMinutes = document.getElementById('cd-m');
 const countdownSeconds = document.getElementById('cd-s');
 
+const hand = document.getElementById('scroll-hand');
+let handScrolled = false;
+
+let scrolling = false;
+
+
 var countdownDate = new Date("Sep 9, 2024 10:00:00").getTime();
 
 form.addEventListener('submit', e => {
@@ -59,3 +65,21 @@ var countdown = setInterval(function() {
     countdownMinutes.innerHTML = `${minutes}<span>minutos</span>`;
     countdownSeconds.innerHTML = `${seconds.toString().padStart(2,'0')}<span>segundos</span>`;
 }, 1000);
+
+
+window.addEventListener("scroll", () => {
+    animateHand(window.scrollY);
+}, { passive: true })
+
+function animateHand(scrollPos) {
+    if (scrollPos > 520  && !handScrolled) {
+        hand.classList.add('scrolling');
+        handScrolled = true;
+    }
+}
+
+setInterval(() => {
+    if (scrolling) {
+        scrolling = false;
+    }
+})

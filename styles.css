@@ -43,7 +43,8 @@ body {
 .white-btn {
     border: 2px solid var(--white-70);
     border-radius: 36px;
-    padding: 12px;
+    padding: 12px;;
+    width: 150px;
     font-size: 16px;
     font-weight: 700;
     background-color: transparent;
@@ -100,111 +101,44 @@ body {
     }
 }
 
-/*
-
-                translate(33px,3px) 2
-                rotate(0deg)OK
-
-                translate(45px,-3px) 3
-                rotate(-90deg)OK
-
-                translate(35px,-9px) 4
-                rotate(-185deg)OK
-
-                translate(31px,-3px) 
-                rotate(-270deg)
-
-                translate(36px,7px) 
-                rotate(-330deg)
-
-                translate(80px,-4px) 
-                rotate(-380deg)
-
-                translate(137px,-8px) 
-                rotate(-350deg)
-
-
-*/
-
 @keyframes planefly {
     0% {
         opacity: 1;
-        transform: translate(10px,-7px) 
+        transform: translate(25px,3px) 
                     rotate(30deg);
     }
     10% {
-        transform: translate(36px,3px) 
+        transform: translate(36px,19px) 
                     rotate(0deg);
     }
     22% {
-        transform: translate(49px,-3px) 
+        transform: translate(49px,13px) 
                     rotate(-100deg);
     }
     34% {
-        transform: translate(35px,-12px) 
+        transform: translate(35px,4px) 
                 rotate(-200deg);
     }
     48% {
-        transform: translate(31px,-3px) 
+        transform: translate(31px,13px) 
                 rotate(-290deg);
     }
     60% {
-        transform: translate(36px,7px) 
+        transform: translate(36px,18px) 
                 rotate(-350deg);
     }
     73% {
-        transform: translate(80px,-5px) 
+        transform: translate(80px,11px) 
                 rotate(-380deg);
     }
     90% {
-        transform: translate(130px,-10px) 
+        transform: translate(130px,6px) 
                 rotate(-350deg);
     }
     100% {
         opacity: 1;
-        transform: translate(137px,-8px)
-        rotate(-350deg);
-    }
-}
-
-@keyframes planeflyDesktop {
-    0% {
-        opacity: 1;
-        transform: translate(0)
-                    rotate(20deg);
-    }
-    10% {
-        transform: translate(50px,30px)
-        rotate(0deg);
-    }
-    22% {
-        transform: translate(110px,-10px)
-        rotate(-90deg);
-    }
-    34% {
-        transform: translate(60px,-40px)
-        rotate(-180deg);
-    }
-    46% {
-        transform: translate(30px,-10px)
-        rotate(-270deg);
-    }
-    58% {
-        transform: translate(50px,50px)
-        rotate(-360deg);
-    }
-    70% {
-        transform: translate(150px,27px)
-        rotate(-380deg);
-    }
-    80% {
-        transform: translate(220px,-15px)
-        rotate(-365deg);
-    }
-    100% {
-        opacity: 1;
-        transform: translate(330px,-8px)
-        rotate(-355deg);
+        transform: translate(137px,8px)
+        rotate(-345deg);
     }
 }
 
@@ -223,6 +157,17 @@ body {
     100% {filter: brightness(1);}
 }
 
+@keyframes hand {
+    0% {transform: translate(90px,0)
+                    rotate(-60deg);}
+    20% {transform: translate(-90px,10px)
+        rotate(-120deg);}
+    60% {transform: translate(0,0)
+                    rotate(-90deg);}
+    100% {transform: translate(90px,0px)
+                    rotate(-60deg);}
+}
+
 /* ANIMACIONES */
 
 
@@ -230,7 +175,6 @@ body {
 
 /* MAIN */
 main {
-    height: 100vh;
     display: grid;
     place-items: center;
     background-image: 
@@ -241,13 +185,18 @@ main {
 }
 
 #animation-wrapper {
-    position: absolute;
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 300px;
+    height: 180px;
+    margin: 50px auto auto;
 }
 
 #animation-container {
     position: relative;
     width: 300px;
-    height: 300px;
+    height: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -266,7 +215,7 @@ main {
     position: absolute;
     width: 27px;
     left: 26px;
-    top: 80px;
+    top: 20px;
     animation: pop .3s linear forwards 2.2s,
                lighten .9s ease forwards 2.7s;
 }
@@ -329,77 +278,34 @@ main {
     animation: planefly .9s linear forwards .9s;
 }
 
+main > p {
+    opacity: 0;
+    animation: appear .7s ease-in forwards 2.7s;
+    margin: 30px auto;
+}
+
+main > .white-btn {
+    opacity: 0;
+    margin: 30px auto;
+    animation: appear 2s ease forwards 3s;
+}
 
 #arrow-splash {
     opacity: 0;
-    position: absolute;
-    bottom: 20px;
+    margin: 30px auto;
     font-size: 30px;
     text-align: center;
     transform: rotate(90deg);
     animation: appearblinking 2s ease forwards 3.6s;
 }
 
-main > .white-btn {
-    opacity: 0;
-    position: absolute;
-    top: 30px;
-    animation: appear 2s ease forwards 2.7s;
-}
 /* MAIN */
-
-
-
-
-/* HERO1 */
-#hero1 {
-    width: 100vw;
-    height: 700px;
-    background-image: url(./img/water.png);
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 10px 30px 9px var(--black-20) inset;
-} 
-/* HERO1 */
-
-
-
-
-/* INFO1 */
-#info1 {
-    margin: 0;
-    padding: 0;
-    background-image: linear-gradient(
-        to bottom right,
-        var(--violeta),
-        var(--fucsia),
-        var(--fucsia0));
-    display: grid;
-    place-items: center;
-    box-shadow: 0 0 18px 1px var(--black-20);
-}
-
-#info1 > h2 {
-    font-size: 40px;
-    font-weight: 900;
-    text-align: center;
-}
-
-#info1 > p {
-    font-size: 14px;
-    padding: 10px 50px;
-}
-
-#info1 > .white-btn {
-    margin: 50px 18px;
-}
-/* INFO1 */
-
 
 
 
 /* FOTOS */
 #fotos {
+    position: relative;
     background-color: var(--crema);
     padding: 20px 0 50px;
     box-shadow: 0 0 18px 9px var(--black-20) inset;
@@ -493,8 +399,72 @@ main > .white-btn {
     left: 21px;
 }
 
+#scroll-hand {
+    font-size: 90px;
+    text-align: center;
+    transform-origin: 25%;
+    transform: rotate(-90deg);
+    color: var(--crema);
+    filter: drop-shadow(0 0 2px #000);
+    position: absolute;
+    width: 50px;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    margin: auto;
+}
+
+.scrolling {
+    animation: hand 1.2s linear 9;
+}
+
 /* FOTOS */
 
+
+
+/* HERO1 */
+#hero1 {
+    width: 100vw;
+    height: 700px;
+    background-image: url(./img/water.png);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 10px 30px 9px var(--black-20) inset;
+} 
+/* HERO1 */
+
+
+
+
+/* INFO1 */
+#info1 {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(
+        to bottom right,
+        var(--violeta),
+        var(--fucsia),
+        var(--fucsia0));
+    display: grid;
+    place-items: center;
+    box-shadow: 0 0 18px 1px var(--black-20);
+}
+
+#info1 > h2 {
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+}
+
+#info1 > p {
+    font-size: 14px;
+    padding: 10px 50px;
+}
+
+#info1 > .white-btn {
+    margin: 50px 18px;
+}
+/* INFO1 */
 
 
 
@@ -682,12 +652,20 @@ input {
 
 @media only screen and (min-width: 768px) {
 
+    #animation-wrapper {
+        transform: scale(1.6);
+        height: 360px;
+    }
 
     .card {
         height: 700px;
         width: 70vw;
         margin: 15vw;
-    } 
+    }
+    
+    main > .white-btn {
+        margin-top: 50px;
+    }
 
     #arrow-splash {
         bottom: 30px;
