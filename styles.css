@@ -33,6 +33,7 @@ body {
     height: 100vh;
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
 }
 
 .blinking {
@@ -99,7 +100,74 @@ body {
     }
 }
 
+/*
+
+                translate(33px,3px) 2
+                rotate(0deg)OK
+
+                translate(45px,-3px) 3
+                rotate(-90deg)OK
+
+                translate(35px,-9px) 4
+                rotate(-185deg)OK
+
+                translate(31px,-3px) 
+                rotate(-270deg)
+
+                translate(36px,7px) 
+                rotate(-330deg)
+
+                translate(80px,-4px) 
+                rotate(-380deg)
+
+                translate(137px,-8px) 
+                rotate(-350deg)
+
+
+*/
+
 @keyframes planefly {
+    0% {
+        opacity: 1;
+        transform: translate(10px,-7px) 
+                    rotate(30deg);
+    }
+    10% {
+        transform: translate(36px,3px) 
+                    rotate(0deg);
+    }
+    22% {
+        transform: translate(49px,-3px) 
+                    rotate(-100deg);
+    }
+    34% {
+        transform: translate(35px,-12px) 
+                rotate(-200deg);
+    }
+    48% {
+        transform: translate(31px,-3px) 
+                rotate(-290deg);
+    }
+    60% {
+        transform: translate(36px,7px) 
+                rotate(-350deg);
+    }
+    73% {
+        transform: translate(80px,-5px) 
+                rotate(-380deg);
+    }
+    90% {
+        transform: translate(130px,-10px) 
+                rotate(-350deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(137px,-8px)
+        rotate(-350deg);
+    }
+}
+
+@keyframes planeflyDesktop {
     0% {
         opacity: 1;
         transform: translate(0)
@@ -173,14 +241,13 @@ main {
 }
 
 #animation-wrapper {
-    transform: scale(.4);
     position: absolute;
 }
 
 #animation-container {
     position: relative;
-    width: 700px;
-    height: 700px;
+    width: 300px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -197,16 +264,16 @@ main {
 #anim-lotus {
     opacity: 0;
     position: absolute;
-    width: 75px;
-    left: 10px;
-    top: 162px;
+    width: 27px;
+    left: 26px;
+    top: 80px;
     animation: pop .3s linear forwards 2.2s,
                lighten .9s ease forwards 2.7s;
 }
 
 #anim-india img {
     opacity: 0;
-    height: 200px;
+    height: 70px;
 }
 
 #anim-india img:nth-child(1) {
@@ -238,8 +305,8 @@ main {
 
 #anim-path {
     opacity: 0;
-    transform: translate(-25px,30px);
-    width: 310px;
+    transform: translateY(10px);
+    width: 108px;
     animation: appear .7s ease-in forwards 1.2s;
 }
 
@@ -248,19 +315,20 @@ main {
     line-height: 70px;
     opacity: 0;
     align-self: flex-end;
-    width: 250px;
+    width: 87px;
     animation: lighten .9s ease forwards 2.7s,
                 appear .7s ease-in forwards 1.2s;
 }
 
 #anim-plane {
-    width: 50px;
+    width: 17px;
     position: absolute;
     left: 0;
     top: 63%;
     opacity: 0;
     animation: planefly .9s linear forwards .9s;
 }
+
 
 #arrow-splash {
     opacity: 0;
@@ -613,9 +681,7 @@ input {
 /* MEDIA QUERIES */
 
 @media only screen and (min-width: 768px) {
-    #animation-wrapper {
-        transform: scale(.6);
-    }
+
 
     .card {
         height: 700px;
@@ -626,11 +692,5 @@ input {
     #arrow-splash {
         bottom: 30px;
         font-size: 30px;
-    }
-}
-
-@media only screen and (min-width: 1400px) {
-    #animation-wrapper {
-        transform: scale(.8);
     }
 }
