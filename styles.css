@@ -385,15 +385,42 @@ main > .white-btn {
 
 #itinerario > p {
     font-size: 14px;
-    height: 200px;
-    padding: 0 50px 18px;
+    height: 210px;
+    width: 270px;
+    padding: 18px;
+    margin: 0 auto;
     text-align: right;
     color: #724;
     transition: all .2s linear;
+    background-image: 
+        linear-gradient(
+            60deg,
+            rgba(220,200,180,.3),
+            rgba(240,220,180,.1));
+    border-radius: 3px;
+    box-shadow: 
+        -18px 18px 70px 1px 
+        rgba(120,36,70,.2) 
+        inset;
 }
 
 #itinerario > p > strong {
     font-size: 16px;
+}
+
+#card-nav {
+    position: relative;
+    width: 50vw;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#card-nav > span {
+    transition: all .3s ease;
+    font-size: 16px;
+    color: #c9a;
 }
 
 #cards-container {
@@ -401,7 +428,7 @@ main > .white-btn {
     display: grid;
     grid-auto-flow: column;
     scroll-behavior: smooth;
-    overflow-y: auto;
+    overflow-y: hidden;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;

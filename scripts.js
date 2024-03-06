@@ -18,87 +18,88 @@ let scrolling = false;
 
 const carrusel = document.getElementById('cards-container');
 const cityText = document.querySelector('#itinerario p');
+const navStars = document.querySelectorAll('#card-nav span');
 let currCity = 0;
 
 const citiesText = {
     '0' : () => {
-        cityText.style.opacity = 0;
+        cityText.style.color = "transparent";
         setTimeout(() => {
             cityText.innerHTML = 
             `<strong>Delhi</strong><br><br>
             Ciudad capital de India, llena de historia y obras emblemáticas. Visitaremos vieja y nueva delhi: Templos, monumentos, paseos en Rikshaw, paseos de compras y mucho más.`;
-            cityText.style.opacity = 1;
+            cityText.style.color = "#724";
         }, 300);
     },
     '1' : () => {
-        cityText.style.opacity = 0;
+        cityText.style.color = "transparent";
         setTimeout(() => {
             cityText.innerHTML = 
             `<strong>Jaipur</strong><br><br>
             Conocida como la ciudad rosa, Jaipur es puro color, telas, elefantes y camellos. Una ciudad con una belleza arquitectónica única donde recorreremos templos, palacios y su muralla de 11km situada en lo más alto de la ciudad que se encuentra dentro del estado de Rajasthan. `;
-            cityText.style.opacity = 1;
+            cityText.style.color = "#724";
         }, 300);
     },
     '2' : () => {
-        cityText.style.opacity = 0;
+        cityText.style.color = "transparent";
         setTimeout(() => {
             cityText.innerHTML = 
             `<strong>Udaipur</strong><br><br>
             La ciudad más romántica de Rajasthan repleta de fortalezas y exóticos palacios que visitaremos como así también museos y realizaremos un crucero por el lago Pichola visitando los gaths, escalones que bajan al río.`;
-            cityText.style.opacity = 1;
+            cityText.style.color = "#724";
         }, 300);
     },
     '3' : () => {
-        cityText.style.opacity = 0;
+        cityText.style.color = "transparent";
         setTimeout(() => {
             cityText.innerHTML = 
             `<strong>Pushkar</strong><br><br>
             En esta ciudad se encuentra el único templo de Brahma en India luego de visitarlo podremos recorrer la ciudad y sus mercados ¡amamos los mercados de India y sus colores!`;
-            cityText.style.opacity = 1;
+            cityText.style.color = "#724";
         }, 300);
     },
     '4' : () => {
-        cityText.style.opacity = 0;
+        cityText.style.color = "transparent";
         setTimeout(() => {
             cityText.innerHTML = 
             `<strong>Agra</strong><br><br>
             Infaltable destino a conocer en India, visitaremos el famoso Taj Mahal, una de las maravillas del mundo, y el fascinante e imponente Fuerte Rojo de Agra.`;
-            cityText.style.opacity = 1;
+            cityText.style.color = "#724";
         }, 300);
     },
     '5' : () => {
-        cityText.style.opacity = 0;
+        cityText.style.color = "transparent";
         setTimeout(() => {
             cityText.innerHTML = 
             `<strong>Lucknow</strong><br><br>
             Capital del estado de Uttar Pradesh, allí visitaremos Bara y Chota Imambaras, Rumi Gate y British Residency. Tendremos tiempo para probar sus famosos kebabs y conocer los bordados chikan característicos de esta zona.`;
-            cityText.style.opacity = 1;
+            cityText.style.color = "#724";
         }, 300);
     },
     '6' : () => {
-        cityText.style.opacity = 0;
+        cityText.style.color = "transparent";
         setTimeout(() => {
             cityText.innerHTML = 
             `<strong>Varanasi</strong><br><br>
             Varanasi es la ciudad que roba el corazón. Aquí el río ganges es protagonista y nos recibirá con las ceremonias de Artic tanto al atardecer como al amanecer donde realizaremos un paseo en barco por este río sagrado. También recorreremos diversos templos antiguos en esta ciudad.`;
-            cityText.style.opacity = 1;
+            cityText.style.color = "#724";
         }, 300);
     },
     '7' : () => {
-        cityText.style.opacity = 0;
+        cityText.style.color = "transparent";
         setTimeout(() => {
             cityText.innerHTML = 
             `<strong>Rishikesh</strong><br><br>
             "La ciudad de los sabios" Esta ciudad sagrada se encuentra a los pies de los Himalayas y se conoce como la capital del yoga.`;
-            cityText.style.opacity = 1;
+            cityText.style.color = "#724";
         }, 300);
     },
     '8' : () => {
-        cityText.style.opacity = 0;
+        cityText.style.color = "transparent";
         setTimeout(() => {
             cityText.innerHTML = 
             `SPARE DESCRIPTION`;
-            cityText.style.opacity = 1;
+            cityText.style.color = "#724";
         }, 300);
     }
 };
@@ -180,6 +181,7 @@ carrusel.addEventListener("scroll", () => {
             (window.innerWidth * 0.9));
     if (city != currCity) {
         currCity = city;
+        updateNav(currCity);
         citiesText[currCity]();
     }
     if (hand.classList.contains('scrolling')) {
@@ -187,3 +189,10 @@ carrusel.addEventListener("scroll", () => {
     }
     
 }, { passive: true });
+
+function updateNav(val) {
+    navStars.forEach((elem) => {
+        elem.style.transform = "scale(.8)";
+    });
+    navStars[val].style.transform = "scale(1.6)";
+}
