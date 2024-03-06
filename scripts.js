@@ -159,16 +159,11 @@ window.addEventListener("scroll", () => {
 }, { passive: true });
 
 
-// ANIMAR MANO
+// ANIMAR MANO 
 function animateHand(scrollPos) {
     if (scrollPos > 520  && !handScrolled) {
         hand.classList.add('scrolling');
         handScrolled = true;
-        setTimeout(() => {
-            hand.classList.remove('scrolling');
-            hand.style.opacity = 0;
-            hand.style.zIndex = -1;
-        }, 3600);
     }
 };
 
@@ -186,6 +181,9 @@ carrusel.addEventListener("scroll", () => {
     if (city != currCity) {
         currCity = city;
         citiesText[currCity]();
+    }
+    if (hand.classList.contains('scrolling')) {
+        hand.classList.remove('scrolling');
     }
     
 }, { passive: true });
