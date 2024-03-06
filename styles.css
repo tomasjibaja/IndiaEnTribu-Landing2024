@@ -279,7 +279,11 @@ main {
 }
 
 main > p {
+    font-size: 14px;
+    text-align: center;
+    color: var(--white-90);
     opacity: 0;
+    width: 300px;
     animation: appear .7s ease-in forwards 2.7s;
     margin: 30px auto;
 }
@@ -303,16 +307,69 @@ main > .white-btn {
 
 
 
-/* FOTOS */
-#fotos {
+/* INFO1 */
+
+#info1 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: var(--crema);
+    padding: 40px 0 40px;
+    box-shadow: 0 0 18px 9px var(--black-20) inset;
+}
+
+#info1 > img {
+    width: 200px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+#info1 > p {
+    font-size: 14px;
+    padding: 0 50px;
+    text-align: left;
+    color: #724;
+    transition: all .2s linear;
+}
+
+#info1 > p > strong {
+    font-size: 16px;
+}
+
+/* INFO1 */
+
+
+
+
+/* HERO1 */
+#hero1 {
+    width: 100vw;
+    height: 700px;
+    background-image: url(./img/water.png);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 10px 30px 9px var(--black-20) inset;
+} 
+/* HERO1 */
+
+
+
+
+
+/* ITINERARIO */
+#itinerario {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     position: relative;
     background-color: var(--crema);
     padding: 20px 0 50px;
     box-shadow: 0 0 18px 9px var(--black-20) inset;
 }
 
-#fotos > h2 {
-    font-size: 40px;
+#itinerario > h2 {
+    font-size: 34px;
     font-weight: 900;
     background-image: linear-gradient(
         to top right,
@@ -323,11 +380,17 @@ main > .white-btn {
     text-align: center;
 }
 
-#fotos > p {
+#itinerario > p {
     font-size: 14px;
-    padding: 18px 50px;
+    height: 200px;
+    padding: 0 50px 18px;
     text-align: right;
     color: #724;
+    transition: all .2s linear;
+}
+
+#itinerario > p > strong {
+    font-size: 16px;
 }
 
 #cards-container {
@@ -365,29 +428,38 @@ main > .white-btn {
 }
 
 .card:nth-of-type(1) {
-    background-image: url(./img/cards/agra.jpg);
+    background-image: url(./img/cards/delhi.png);
     margin-left: 5vw;
 }
 
 .card:nth-of-type(2) {
-    background-image: url(./img/cards/delhi.png);
+    background-image: url(./img/cards/jaipur.png);
     background-size: auto;
 }
 
 .card:nth-of-type(3) {
-    background-image: url(./img/cards/pushkar.jpg);
+    background-image: url(./img/cards/udaipur.jpg);
 }
 
 .card:nth-of-type(4) {
-    background-image: url(./img/cards/rishikesh.jpg);
+    background-image: url(./img/cards/pushkar.jpg);
 }
 
 .card:nth-of-type(5) {
-    background-image: url(./img/cards/varanasi.jpg);
+    background-image: url(./img/cards/agra.jpg);
 }
 
 .card:nth-of-type(6) {
-    background-image: url(./img/cards/jaipur.png);
+    background-image: url(./img/cards/lucknow.jpg);
+}
+
+.card:nth-of-type(7) {
+    background-image: url(./img/cards/varanasi.jpg);
+}
+
+.card:nth-of-type(8) {
+    background-image: url(./img/cards/rishikesh.jpg);
+    margin-right: 5vw;
 }
 
 .card > span {
@@ -412,32 +484,21 @@ main > .white-btn {
     right: 0;
     bottom: 50px;
     margin: auto;
+    transition: all 1s linear;
 }
 
 .scrolling {
-    animation: hand 1.2s linear 9;
+    animation: hand 1.2s linear 3;
 }
 
-/* FOTOS */
-
-
-
-/* HERO1 */
-#hero1 {
-    width: 100vw;
-    height: 700px;
-    background-image: url(./img/water.png);
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 10px 30px 9px var(--black-20) inset;
-} 
-/* HERO1 */
+/* ITINERARIO */
 
 
 
 
-/* INFO1 */
-#info1 {
+
+/* INFO2 */
+#info2 {
     margin: 0;
     padding: 0;
     background-image: linear-gradient(
@@ -450,21 +511,21 @@ main > .white-btn {
     box-shadow: 0 0 18px 1px var(--black-20);
 }
 
-#info1 > h2 {
+#info2 > h2 {
     font-size: 40px;
     font-weight: 900;
     text-align: center;
 }
 
-#info1 > p {
+#info2 > p {
     font-size: 14px;
     padding: 10px 50px;
 }
 
-#info1 > .white-btn {
+#info2 > .white-btn {
     margin: 50px 18px;
 }
-/* INFO1 */
+/* INFO2 */
 
 
 
