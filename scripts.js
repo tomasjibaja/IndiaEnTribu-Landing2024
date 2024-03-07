@@ -10,6 +10,7 @@ const countdownDays = document.getElementById('cd-d');
 const countdownHours = document.getElementById('cd-h');
 const countdownMinutes = document.getElementById('cd-m');
 const countdownSeconds = document.getElementById('cd-s');
+const countdownPlane = document.getElementById('cd-plane');
 
 const hand = document.getElementById('scroll-hand');
 let handScrolled = false;
@@ -104,9 +105,6 @@ const citiesText = {
     }
 };
 
-
-var countdownDate = new Date("Sep 9, 2024 10:00:00").getTime();
-
 form.addEventListener('submit', e => {
     submitBtn.style.opacity = .5;
     submitBtn.style.zIndex = -1;
@@ -138,6 +136,9 @@ function hideModal() {
 
 // COUNTDOWN
 
+var countdownDate = new Date("Sep 9, 2024 04:00:00").getTime();
+
+
 var countdown = setInterval(function() {
     var now = new Date().getTime();
 
@@ -148,10 +149,16 @@ var countdown = setInterval(function() {
     var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
-    countdownDays.innerHTML = `${days}<span>días</span>`;
-    countdownHours.innerHTML = `${hours}<span>horas</span>`;
-    countdownMinutes.innerHTML = `${minutes}<span>minutos</span>`;
-    countdownSeconds.innerHTML = `${seconds.toString().padStart(2,'0')}<span>segundos</span>`;
+    countdownDays.innerHTML =
+        `${days}<span>días</span>`;
+    countdownHours.innerHTML =
+        `${hours.toString().padStart(2,'0')}<span>hs</span>`;
+    countdownMinutes.innerHTML =
+        `${minutes.toString().padStart(2,'0')}<span>min</span>`;
+    countdownSeconds.innerHTML =
+        `${seconds.toString().padStart(2,'0')}<span>seg</span>`;
+    countdownPlane.style.right = `${days}px`;
+    
 }, 1000);
 
 
@@ -178,7 +185,7 @@ setInterval(() => {
 carrusel.addEventListener("scroll", () => {
     let city = 
         Math.trunc(carrusel.scrollLeft /
-            (window.innerWidth * 0.9));
+            (window.innerWidth * 0.87));
     if (city != currCity) {
         currCity = city;
         updateNav(currCity);
@@ -193,6 +200,8 @@ carrusel.addEventListener("scroll", () => {
 function updateNav(val) {
     navStars.forEach((elem) => {
         elem.style.transform = "scale(.8)";
+        elem.style.color = "var(--old-pink)";
     });
-    navStars[val].style.transform = "scale(1.6)";
+    navStars[val].style.transform = "scale(1.2)";
+    navStars[val].style.color = "var(--wine)";
 }
