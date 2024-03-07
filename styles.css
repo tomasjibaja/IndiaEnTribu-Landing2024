@@ -494,7 +494,7 @@ main > .white-btn {
 }
 
 .card:nth-of-type(2) {
-    background-image: url(./img/cards/jaipur.png);
+    background-image: url(./img/cards/jaipur.jpg);
     background-size: auto;
 }
 
@@ -523,7 +523,7 @@ main > .white-btn {
 }
 
 .card:nth-of-type(9) {
-    background-image: url(./img/cards/);
+    background-image: url(./img/cards/retiro.jpg);
     margin-right: 10vw;
 }
 
@@ -990,7 +990,6 @@ input {
         position: absolute;
         right: 6vw;
         bottom: 150px;
-        box-shadow: 0 0 16px 18px var(--crema) inset;
         transform: translateX(-9px);
         transition: all .5s ease;
     }

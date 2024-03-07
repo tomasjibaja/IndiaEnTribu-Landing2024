@@ -1,11 +1,12 @@
+// VARIABLES DE FORMULARIO
 const scriptURL = 'https://script.google.com/macros/s/AKfycbyYyY62UQlrx2mq8TXbkyciTvzuTu3_3W-xgLXzWBuihpv-hJmLiWf3hm840NWHKFMzGQ/exec';
 const form = document.forms['contact-form'];
 const formMsg = document.getElementById('form-msg');
 const submitBtn = document.getElementById('submit');
 const formCont = document.getElementById('form-container');
-
 const contactModal = document.getElementById('contact-modal');
 
+// VARIABLES DE COUNTDOWN
 const countdown = document.getElementById('countdown');
 const countdownDays = document.getElementById('cd-d');
 const countdownHours = document.getElementById('cd-h');
@@ -13,11 +14,9 @@ const countdownMinutes = document.getElementById('cd-m');
 const countdownSeconds = document.getElementById('cd-s');
 const countdownPlane = document.getElementById('cd-plane');
 
+// VARIABLES DE CARRUSEL
 const hand = document.getElementById('scroll-hand');
 let handScrolled = false;
-
-let scrolling = false;
-
 const carrusel = document.getElementById('cards-container');
 const cityText = document.querySelector('#itinerario p');
 const navStars = document.querySelectorAll('#card-nav span');
@@ -25,6 +24,12 @@ const cityMap = document.getElementById('city-map');
 const selectedCard = document.getElementById('selected-card');
 let currCity = 0;
 
+
+// VARIABLES DE SCROLLING
+let scrolling = false;
+
+
+//OBJETO TEXTO CIUDADES
 const citiesText = {
     '0' : () => {
         cityText.style.color = "transparent";
@@ -109,8 +114,7 @@ const citiesText = {
     }
 };
 
-
-
+// OBJETO MAPA CIUDADES
 const citiesMap = {
     '1' : () => {
         cityMap.style.opacity = 0;
@@ -186,8 +190,7 @@ const citiesMap = {
     },
 }
 
-
-
+// OBJETO IMAGEN CIUDADES
 const citiesImg = {
     '1' : () => {
         selectedCard.style.zIndex = 1;
@@ -198,7 +201,7 @@ const citiesImg = {
     },
     '2' : () => {
         selectedCard.style.zIndex = 1;
-        selectedCard.style.backgroundImage = "url(./img/cards/jaipur.png)"
+        selectedCard.style.backgroundImage = "url(./img/cards/jaipur.jpg)"
         setTimeout(() => {
             selectedCard.style.opacity = 1;
         }, 300);
@@ -254,6 +257,8 @@ const citiesImg = {
     },
 }
 
+
+// FORMULARIO
 form.addEventListener('submit', e => {
     submitBtn.style.opacity = .5;
     submitBtn.style.zIndex = -1;
@@ -284,7 +289,6 @@ function hideModal() {
 }
 
 // COUNTDOWN
-
 var countdownDate = new Date("Sep 9, 2024 04:00:00").getTime();
 
 var updateCountdown = setInterval(function() {
@@ -331,27 +335,8 @@ var updateCountdown = setInterval(function() {
     
 }, 1000);
 
-window.addEventListener("scroll", () => {
-    animateHand(window.scrollY);
-}, { passive: true });
 
-
-// ANIMAR MANO 
-function animateHand(scrollPos) {
-    if (scrollPos > 520  && !handScrolled) {
-        hand.classList.add('scrolling');
-        handScrolled = true;
-    }
-};
-
-setInterval(() => {
-    if (scrolling) {
-        scrolling = false;
-    }
-});
-
-// POSICION CARRUSEL
-
+// CARRUSEL
 carrusel.addEventListener("scroll", () => {
     let city = 
         Math.trunc(carrusel.scrollLeft /
@@ -386,3 +371,27 @@ function closeCard() {
     selectedCard.style.opacity = 0;
     selectedCard.style.zIndex = -1;
 }
+
+
+// ANIMAR MANO 
+function animateHand(scrollPos) {
+    if (scrollPos > 520  && !handScrolled) {
+        hand.classList.add('scrolling');
+        handScrolled = true;
+    }
+};
+
+
+// SCROLL EVENTS
+setInterval(() => {
+    if (scrolling) {
+        scrolling = false;
+    }
+});
+
+window.addEventListener("scroll", () => {
+    animateHand(window.scrollY);
+}, { passive: true });
+
+
+
