@@ -6,6 +6,7 @@ const formCont = document.getElementById('form-container');
 
 const contactModal = document.getElementById('contact-modal');
 
+const countdown = document.getElementById('countdown');
 const countdownDays = document.getElementById('cd-d');
 const countdownHours = document.getElementById('cd-h');
 const countdownMinutes = document.getElementById('cd-m');
@@ -139,12 +140,32 @@ function hideModal() {
 
 var countdownDate = new Date("Sep 9, 2024 04:00:00").getTime();
 
-
-var countdown = setInterval(function() {
+var updateCountdown = setInterval(function() {
     var now = new Date().getTime();
-
     var timeleft = countdownDate - now;
 
+    var days =
+        Math.floor(timeleft / (1000 * 60 * 60 * 24))
+        .toString();
+    var hours =
+        Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+        .toString().padStart(2,'0');
+    var minutes =
+        Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60))
+        .toString().padStart(2,'0');
+    var seconds =
+        Math.floor((timeleft % (1000 * 60)) / 1000)
+        .toString().padStart(2,'0');
+
+    countdown.innerHTML =
+        `<h3>${days}<span>días</span></h3>
+        <h3>${hours}<span>hs</span></h3>
+        <h3>${minutes}<span>min</span></h3>
+        <h3>${seconds}<span>seg</span></h3>`;
+
+    countdownPlane.style.right = `${days}px`;
+
+    /* OLD CODE ////////////////////////////////////////
     var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
     var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
@@ -159,9 +180,9 @@ var countdown = setInterval(function() {
     countdownSeconds.innerHTML =
         `${seconds.toString().padStart(2,'0')}<span>seg</span>`;
     countdownPlane.style.right = `${days}px`;
+    */
     
 }, 1000);
-
 
 window.addEventListener("scroll", () => {
     animateHand(window.scrollY);
