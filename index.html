@@ -37,23 +37,20 @@
     </main>
 
     <section id="info1">
-        <h2>DE QUÉ SE TRATA</h2>
-        <p>India en tribu es un viaje <b>sagrado</b> que convoca a todas las mujeres que sientan el llamado de ser parte de esta experiencia para conocer y descubrir las tierras sagradas de <b>India</b>. Aquí la espiritualidad y la profundidad del yoga nos invitan al encuentro con nuestro ser en plenitud y armonía, mientras compartimos entre risas y paseos un apasionante viaje por las diversas ciudades de India.</p>
-        <p>En este viaje de 20 días te invitamos a sumergirte en la cultura, los colores, los aromas y los paisajes de India, como también te invitamos a conectar con tu ser a través de las prácticas diarias de Yoga, meditación y canto de mantras.</p>
-        <p>Ideamos este viaje para mujeres que sienten el deseo y las ganas de conocer India pero no quieren hacerlo solas <b>¿qué mejor entonces que darnos la mano para recorrer este mágico país?</b></p>
-        <p>En varias oportunidades India tocó nuestro corazón. Tanto que desde el primer día anhelamos ser puente para que más y más mujeres descubran los secretos de éstas tierras sagradas.
-        <br><br></p>
-        <strong>¿Estás lista para la aventura?</strong>
-        
-        
+        <h2>¿ESTÁS LISTA PARA LA AVENTURA?</h2>
+        <p>India en tribu es un viaje para conocer y descubrir las tierras sagradas de India.</p>
+        <p>Ideamos esta experiencia para mujeres que sienten el llamado de viajar a India y no quieren hacerlo solas. ¡Que mejor entonces que viajar en tribu!</p>
+        <p>Propone un equilibrio entre la espiritualidad y la profundidad del yoga, la meditación y el turismo. Compartiendo sesiones diarias de yoga, paseos, excursiones, risas y mates en por diversas ciudades de India.</p>
+        <p>En estos 20 días de viaje te invitamos a sumergirte en la cultura, los colores, los aromas , los templos, rituales y paisajes de India, como también a conectar con tu ser a través de las prácticas diarias de Yoga, meditación y respiración consciente.</p>
     </section>
 
     <div id="hero1"></div>
 
     <section id="itinerario">
-        <h2>DÓNDE IREMOS</h2>
+        <h2>NUESTRA HOJA DE RUTA</h2>
         <p><strong>Delhi</strong><br><br>
             Ciudad capital de India, llena de historia y obras emblemáticas. Visitaremos vieja y nueva delhi: Templos, monumentos, paseos en Rikshaw, paseos de compras y mucho más.</p>
+        <div id="city-map"></div>
         <div id="card-nav">
             <span>&#10022;</span>
             <span>&#10022;</span>
@@ -66,32 +63,49 @@
         </div>
         <div id="cards-container">
             <div class="card">
+                <div class="card-select" onclick="selectCard(1)"></div>
                 <span>DELHI</span>
             </div>
             <div class="card">
+                <div class="card-select" onclick="selectCard(2)"></div>
                 <span>JAIPUR</span>
             </div>
             <div class="card">
+                <div class="card-select" onclick="selectCard(3)"></div>
                 <span>UDAIPUR</span>
             </div>
             <div class="card">
+                <div class="card-select" onclick="selectCard(4)"></div>
                 <span>PUSHKAR</span>
             </div>
             <div class="card">
+                <div class="card-select" onclick="selectCard(5)"></div>
                 <span>AGRA</span>
             </div>
             <div class="card">
+                <div class="card-select" onclick="selectCard(6)"></div>
                 <span>LUCKNOW</span>
             </div>
             <div class="card">
+                <div class="card-select" onclick="selectCard(7)"></div>
                 <span>VARANASI</span>
             </div>
             <div class="card">
+                <div class="card-select" onclick="selectCard(8)"></div>
                 <span>RISHIKESH</span>
             </div>
+            <div class="card">
+                <div class="card-select" onclick="selectCard(9)"></div>
+                <span>RETIRO</span>
+            </div>
+        </div>
+        <div id="selected-card">
+            <span onclick="closeCard()">&#10005;</span>
         </div>
         <span id="scroll-hand">&#9755;</span>
     </section>
+
+
 
     <section id="info2">
         <h2>TÍTULO DOS</h2>
@@ -99,6 +113,8 @@
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus deleniti ipsa eum culpa, quos, at hic rerum corrupti nihil nostrum numquam voluptates rem animi vitae. Minima, pariatur consequatur. Error, cum!</p>
         <button class="white-btn" onclick="showModal()">CONTACTO</button>
     </section>
+
+
     
     <section id="cuenta-regresiva">
         <div id="countdown-wrapper">

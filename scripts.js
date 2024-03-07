@@ -21,6 +21,8 @@ let scrolling = false;
 const carrusel = document.getElementById('cards-container');
 const cityText = document.querySelector('#itinerario p');
 const navStars = document.querySelectorAll('#card-nav span');
+const cityMap = document.getElementById('city-map');
+const selectedCard = document.getElementById('selected-card');
 let currCity = 0;
 
 const citiesText = {
@@ -106,6 +108,151 @@ const citiesText = {
         }, 300);
     }
 };
+
+
+
+const citiesMap = {
+    '1' : () => {
+        cityMap.style.opacity = 0;
+        setTimeout(() => {
+            cityMap.style.backgroundImage =
+                "url(./img/maps/Delhi.png)";
+            cityMap.style.opacity = 1;
+        }, 600);
+    },
+    '2' : () => {
+        cityMap.style.opacity = 0;
+        setTimeout(() => {
+            cityMap.style.backgroundImage =
+                "url(./img/maps/Jaipur.png)";
+            cityMap.style.opacity = 1;
+        }, 600);
+    },
+    '3' : () => {
+        cityMap.style.opacity = 0;
+        setTimeout(() => {
+            cityMap.style.backgroundImage =
+                "url(./img/maps/Udaipur.png)";
+            cityMap.style.opacity = 1;
+        }, 600);
+    },
+    '4' : () => {
+        cityMap.style.opacity = 0;
+        setTimeout(() => {
+            cityMap.style.backgroundImage =
+                "url(./img/maps/Pushkar.png)";
+            cityMap.style.opacity = 1;
+        }, 600);
+    },
+    '5' : () => {
+        cityMap.style.opacity = 0;
+        setTimeout(() => {
+            cityMap.style.backgroundImage =
+                "url(./img/maps/Agra.png)";
+            cityMap.style.opacity = 1;
+        }, 600);
+    },
+    '6' : () => {
+        cityMap.style.opacity = 0;
+        setTimeout(() => {
+            cityMap.style.backgroundImage =
+                "url(./img/maps/Lucknow.png)";
+            cityMap.style.opacity = 1;
+        }, 600);
+    },
+    '7' : () => {
+        cityMap.style.opacity = 0;
+        setTimeout(() => {
+            cityMap.style.backgroundImage =
+                "url(./img/maps/Varanasi.png)";
+            cityMap.style.opacity = 1;
+        }, 600);
+    },
+    '8' : () => {
+        cityMap.style.opacity = 0;
+        setTimeout(() => {
+            cityMap.style.backgroundImage =
+                "url(./img/maps/Rishikesh.png)";
+            cityMap.style.opacity = 1;
+        }, 600);
+    },
+    '9' : () => {
+        cityMap.style.opacity = 0;
+        setTimeout(() => {
+            cityMap.style.backgroundImage =
+                "url(./img/maps/)";
+            cityMap.style.opacity = 1;
+        }, 600);
+    },
+}
+
+
+
+const citiesImg = {
+    '1' : () => {
+        selectedCard.style.zIndex = 1;
+        selectedCard.style.backgroundImage = "url(./img/cards/delhi.jpg)"
+        setTimeout(() => {
+            selectedCard.style.opacity = 1;
+        }, 300);
+    },
+    '2' : () => {
+        selectedCard.style.zIndex = 1;
+        selectedCard.style.backgroundImage = "url(./img/cards/jaipur.png)"
+        setTimeout(() => {
+            selectedCard.style.opacity = 1;
+        }, 300);
+    },
+    '3' : () => {
+        selectedCard.style.zIndex = 1;
+        selectedCard.style.backgroundImage = "url(./img/cards/udaipur.jpg)"
+        setTimeout(() => {
+            selectedCard.style.opacity = 1;
+        }, 300);
+    },
+    '4' : () => {
+        selectedCard.style.zIndex = 1;
+        selectedCard.style.backgroundImage = "url(./img/cards/pushkar.jpg)"
+        setTimeout(() => {
+            selectedCard.style.opacity = 1;
+        }, 300);
+    },
+    '5' : () => {
+        selectedCard.style.zIndex = 1;
+        selectedCard.style.backgroundImage = "url(./img/cards/agra.jpg)"
+        setTimeout(() => {
+            selectedCard.style.opacity = 1;
+        }, 300);
+    },
+    '6' : () => {
+        selectedCard.style.zIndex = 1;
+        selectedCard.style.backgroundImage = "url(./img/cards/lucknow.jpg)"
+        setTimeout(() => {
+            selectedCard.style.opacity = 1;
+        }, 300);
+    },
+    '7' : () => {
+        selectedCard.style.zIndex = 1;
+        selectedCard.style.backgroundImage = "url(./img/cards/varanasi.jpg)"
+        setTimeout(() => {
+            selectedCard.style.opacity = 1;
+        }, 300);
+    },
+    '8' : () => {
+        selectedCard.style.zIndex = 1;
+        selectedCard.style.backgroundImage = "url(./img/cards/rishikesh.jpg)"
+        setTimeout(() => {
+            selectedCard.style.opacity = 1;
+        }, 300);
+    },
+    '9' : () => {
+        selectedCard.style.zIndex = 1;
+        selectedCard.style.backgroundImage = "url(./img/cards/retiro.jpg)"
+        setTimeout(() => {
+            selectedCard.style.opacity = 1;
+        }, 300);
+    },
+}
 
 form.addEventListener('submit', e => {
     submitBtn.style.opacity = .5;
@@ -204,6 +351,7 @@ setInterval(() => {
 });
 
 // POSICION CARRUSEL
+
 carrusel.addEventListener("scroll", () => {
     let city = 
         Math.trunc(carrusel.scrollLeft /
@@ -226,4 +374,15 @@ function updateNav(val) {
     });
     navStars[val].style.transform = "scale(1.2)";
     navStars[val].style.color = "var(--wine)";
+}
+
+function selectCard(val) {
+    citiesText[val - 1]();
+    citiesMap[val]();
+    citiesImg[val]();
+}
+
+function closeCard() {
+    selectedCard.style.opacity = 0;
+    selectedCard.style.zIndex = -1;
 }

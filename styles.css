@@ -187,6 +187,7 @@ main {
             to bottom right, 
             var(--naranja0), 
             var(--fucsia0));
+    overflow: hidden;
 }
 
 #main-bkg {
@@ -482,8 +483,13 @@ main > .white-btn {
                 0 -50px 100px 3px black inset;
 }
 
+.card-select, #selected-card, #city-map {
+    opacity: 0;
+    z-index: -1;
+}
+
 .card:nth-of-type(1) {
-    background-image: url(./img/cards/delhi.png);
+    background-image: url(./img/cards/delhi.jpg);
     margin-left: 10vw;
 }
 
@@ -514,6 +520,10 @@ main > .white-btn {
 
 .card:nth-of-type(8) {
     background-image: url(./img/cards/rishikesh.jpg);
+}
+
+.card:nth-of-type(9) {
+    background-image: url(./img/cards/);
     margin-right: 10vw;
 }
 
@@ -838,46 +848,238 @@ input {
         font-size: 16px;
     }
 
-    .card {
-        width: 500px;
-    }
-
     #countdown > h3 {
         margin-top: 0;
         margin-bottom: 0;
     }
-}
 
-.card:nth-of-type(1) {
-    margin-left: calc((100vw - 500px) / 2) ;
-}
+    .card:nth-of-type(1) {
+        margin-left: calc((100vw - 500px) / 2) ;
+    }
 
-.card:nth-of-type(8) {
-    margin-right: calc((100vw - 500px) / 2) ;
+    .card:nth-of-type(8) {
+        margin-right: calc((100vw - 500px) / 2) ;
+    }
+    
 }
 
 
 /* DESKTOP */
 @media only screen and (min-width: 1024px) {
 
+
+    /* MAIN */
+    main {
+        height: 700px;
+    }
+    
     #animation-wrapper {
         transform: scale(1.6);
         height: 360px;
         top: 100px;
     }
 
-    .card {
-        height: 700px;
-        width: 70vw;
-        margin: 15vw;
+    main > #arrow-splash {
+        opacity: 0;
+        z-index: -1;
+        animation: none;
+    }
+
+    main > p {
+        font-size: 21px;
+        width: auto;
     }
     
     main > .white-btn {
-        margin-top: 50px;
+        margin: auto;
     }
 
-    #arrow-splash {
-        bottom: 30px;
-        font-size: 30px;
+
+
+    /* INFO1 */
+
+    #info1 {
+        display: grid;
+        place-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #info1::before {
+        content: '';
+        opacity: .3;
+        background-image: url(./img/mandala.png);
+        background-position: right;
+        background-size: contain;
+        height: 100%;
+        width: 25%;
+        position: absolute;
+        left: -10%;
+        top: 0;
+    }
+
+    #info1::after {
+        content: '';
+        opacity: .3;
+        background-image: url(./img/mandala.png);
+        background-position: left;
+        background-size: contain;
+        height: 100%;
+        width: 25%;
+        position: absolute;
+        right: -10%;
+        top: 0;
+    }
+
+    #info1 > h2 {
+        font-size: 36px;
+    }
+
+    #info1 > p {
+        max-width: 40vw;
+        font-size: 18px;
+    }
+
+    #info1 > strong {
+        font-size: 25px;
+        width: auto;
+    }
+
+
+    /* HERO1 */
+
+    #hero1 {
+        background-image: url(./img/night.png);
+        background-position: center;
+    }
+
+
+    /* ITINERARIO */
+
+    #itinerario {
+        padding-top: 50px;
+        padding-bottom: 100px;
+    }
+
+    #itinerario > h2 {
+        font-size: 36px;
+    }
+
+    #itinerario > p {
+        position: absolute;
+        top: 200px;
+        right: 5vw;
+        font-size: 18px;
+        line-height: 21px;
+        font-weight: 300;
+        height: 200px;
+        width: 400px;
+        padding: 25px;
+        border-radius: 30px;
+    }
+
+    #city-map {
+        opacity: 1;
+        z-index: 1;
+        background-image: url(./img/maps/Delhi.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 350px;
+        width: 350px;
+        position: absolute;
+        right: 6vw;
+        bottom: 150px;
+        box-shadow: 0 0 16px 18px var(--crema) inset;
+        transform: translateX(-9px);
+        transition: all .5s ease;
+    }
+
+    #city-map:hover {
+        transform: translate(-9px,-9px) scale(1.1);
+    }
+
+    #itinerario > p > strong {
+        font-size: 21px;
+    }
+
+    #cards-container {
+        position: relative;
+
+        display: grid;
+        width: calc(83vw - 400px);
+        height: 80lvh;
+        margin-left: 5vw;
+        border-radius: 18px;
+        overflow: visible;
+
+        grid-auto-flow: none;
+        overscroll-behavior-x: none;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    
+    }
+
+    .card {
+        border: none;
+        width: 90%;
+        height: 90%;
+        margin: 0;
+        opacity: .7;
+        transition: all .5s ease;
+    }
+
+    .card-select {
+        transition: all .5s ease;
+        position: absolute;
+        margin: auto;
+        width: 90%;
+        height: 90%;
+        cursor: pointer;
+    }
+
+    #selected-card {
+        position: absolute;
+        left: 5vw;
+        top: 180px;
+        width: calc(83vw - 400px);
+        height: 80lvh;
+        border-radius: 27px;
+        background-position: center ;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: var(--black-20);
+        transition: all .3s linear;
+    }
+
+    #selected-card > span {
+        font-size: 40px;
+        position: absolute;
+        right: 30px;
+        top: 20px;
+        cursor: pointer;
+        filter: drop-shadow(0 0 1px #000);
+    }
+
+    .card:hover > .card-select {
+        opacity: 1;
+        z-index: 1;
+    }
+
+    .card:hover {
+        opacity: 1;
+        width: 105%;
+        height: 105%;
+        z-index: 1;
+    }
+
+    .card:first-of-type, .card:last-of-type {
+        margin: 0;
+    }
+
+    #scroll-hand, #card-nav {
+        animation: none;
+        opacity: 0;
+        z-index: -1;
     }
 }
