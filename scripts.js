@@ -91,7 +91,8 @@ const citiesText = {
         setTimeout(() => {
             cityText.innerHTML = 
             `<strong>Rishikesh</strong><br><br>
-            "La ciudad de los sabios" Esta ciudad sagrada se encuentra a los pies de los Himalayas y se conoce como la capital del yoga.`;
+            "La ciudad de los sabios" Esta ciudad sagrada se encuentra a los pies de los Himalayas y se conoce como la capital del yoga. <br>
+            Aquí visitaremos bazares, templos, cascadas y nos sumergiremos en la profundidad del yoga y la meditación para cerrar el viaje en conexión profunda con el ser. `;
             cityText.style.color = "#724";
         }, 300);
     },
@@ -150,11 +151,11 @@ var countdown = setInterval(function() {
     var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
     countdownDays.innerHTML =
-        `${days}<span>días</span>`;
+        days == 1 ? `1<span>día</span>` : `${days}<span>días</span>`;
     countdownHours.innerHTML =
-        `${hours.toString().padStart(2,'0')}<span>hs</span>`;
+        `${hours.toString().padStart(2,'0')}:<span>hs</span>`;
     countdownMinutes.innerHTML =
-        `${minutes.toString().padStart(2,'0')}<span>min</span>`;
+        `${minutes.toString().padStart(2,'0')}:<span>min</span>`;
     countdownSeconds.innerHTML =
         `${seconds.toString().padStart(2,'0')}<span>seg</span>`;
     countdownPlane.style.right = `${days}px`;

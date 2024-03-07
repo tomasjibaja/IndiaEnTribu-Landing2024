@@ -182,6 +182,8 @@ body {
 
 /* MAIN */
 main {
+    height: 550px;
+    position: relative;
     display: grid;
     place-items: center;
     background-image: 
@@ -191,10 +193,14 @@ main {
             var(--fucsia0));
 }
 
+#main-bkg {
+    width: 100vw;
+    position: absolute;
+    opacity: .3;
+}
+
 #animation-wrapper {
     position: relative;
-    display: grid;
-    place-items: center;
     width: 300px;
     height: 180px;
     margin: 50px auto auto;
@@ -293,21 +299,29 @@ main > p {
     width: 300px;
     animation: appear .7s ease-in forwards 2.7s;
     margin: 30px auto;
+    filter: drop-shadow(1px 1px 1px var(--fucsia))
+            drop-shadow(-1px -1px 1px var(--naranja-strong));
+    position: absolute;
+    bottom: 130px;
 }
 
 main > .white-btn {
     opacity: 0;
     margin: 30px auto;
     animation: appear 2s ease forwards 3s;
+    position: absolute;
+    bottom: 40px;
 }
 
 #arrow-splash {
     opacity: 0;
-    margin: 30px auto;
+    margin: auto;
     font-size: 30px;
     text-align: center;
     transform: rotate(90deg);
     animation: appearblinking 2s ease forwards 3.6s;
+    position: absolute;
+    bottom: 20px;
 }
 
 /* MAIN */
@@ -337,12 +351,6 @@ main > .white-btn {
     text-align: center;
 }
 
-#info1 > img {
-    width: 200px;
-    margin: auto;
-    margin-bottom: 20px;
-}
-
 #info1 > p {
     font-size: 14px;
     padding: 0 50px;
@@ -368,10 +376,10 @@ main > .white-btn {
 /* HERO1 */
 #hero1 {
     width: 100vw;
-    height: 700px;
+    height: 50vh;
     background-image: url(./img/water.png);
     background-size: cover;
-    background-position: center;
+    background-position: top;
     box-shadow: 0 10px 30px 9px var(--black-20) inset;
 } 
 /* HERO1 */
@@ -406,7 +414,7 @@ main > .white-btn {
 
 #itinerario > p {
     font-size: 14px;
-    height: 210px;
+    height: 220px;
     width: 270px;
     padding: 18px;
     margin: 10px auto;
@@ -602,7 +610,6 @@ main > .white-btn {
 /* CUENTA REGRESIVA */
 
 #cuenta-regresiva {
-    height: 100vh;
     position: relative;
     display: grid;
     align-items: center;
@@ -633,16 +640,23 @@ main > .white-btn {
 #countdown-wrapper > h3 {
     display: inline-block;
     font-size: 36px;
+    margin: 50px auto;
 }
 
 #countdown {
+    width: 300px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    transition: all 1s linear;
+}
+
+#countdown > h3:first-of-type {
+    margin-right: 12px;
 }
 
 #countdown > h3 {
-    font-size: 90px;
+    font-size: 50px;
     position: relative;
     margin: 0 auto;
     text-align: center;
@@ -652,7 +666,7 @@ main > .white-btn {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: -7px;
     text-align: center;
     font-size: 16px;
 }
@@ -663,7 +677,7 @@ main > .white-btn {
     border: transparent;
     border-top: 1px #fff dashed;
     position: relative;
-    margin: 50px auto;
+    margin: 80px auto 60px;
 }
 
 #cd-animation > i {
