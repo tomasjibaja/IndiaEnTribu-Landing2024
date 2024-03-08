@@ -333,6 +333,8 @@ main > .white-btn {
 
 #info1 > h2 {
     font-size: 30px;
+    width: 300px;
+    margin: 20px auto;
     font-weight: 900;
     background-image: linear-gradient(
         to top right,
@@ -344,21 +346,13 @@ main > .white-btn {
 }
 
 #info1 > p {
-    font-size: 14px;
+    font-size: 16px;
     padding: 0 50px;
     text-align: left;
     color: var(--wine);
     transition: all .2s linear;
 }
 
-#info1 > strong {
-    color: var(--wine);
-    position: relative;
-    font-size: 18px;
-    width: 300px;
-    text-align: center;
-    margin: 10px auto 40px;
-}
 
 /* INFO1 */
 
@@ -392,7 +386,7 @@ main > .white-btn {
 }
 
 #itinerario > h2 {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 900;
     background-image: linear-gradient(
         to top right,
@@ -404,8 +398,8 @@ main > .white-btn {
 }
 
 #itinerario > p {
-    font-size: 14px;
-    height: 220px;
+    font-size: 16px;
+    height: 250px;
     width: 270px;
     padding: 18px;
     margin: 10px auto;
@@ -435,7 +429,7 @@ main > .white-btn {
 #card-nav {
     position: relative;
     width: 50vw;
-    margin: 0 auto;
+    margin: 20px auto;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -563,33 +557,93 @@ main > .white-btn {
 
 /* INFO2 */
 #info2 {
-    margin: 0;
-    padding: 0;
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: 20px;
     background-image: linear-gradient(
         to bottom right,
         var(--violeta),
         var(--fucsia),
         var(--fucsia0));
-    display: grid;
-    place-items: center;
     box-shadow: 0 0 18px 1px var(--black-20);
 }
 
 #info2 > h2 {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 900;
-    text-align: center;
+}
+
+#info2 li {
+    margin: 20px 0;
+}
+
+#info2 h4 {
+    padding: 0 20px;
 }
 
 #info2 > p {
-    font-size: 14px;
-    padding: 10px 50px;
+    padding: 0 20px;
+    font-size: 18px;
 }
 
 #info2 > .white-btn {
-    margin: 50px 18px;
+    margin: 50px auto;
 }
 /* INFO2 */
+
+
+
+
+/* BIO */
+
+#bio {
+    position: relative;
+    background-color: var(--crema);
+    padding: 40px 0 40px;
+    box-shadow: 0 0 18px 9px var(--black-20) inset;
+}
+
+#bio > h2 {
+    font-size: 30px;
+    width: 300px;
+    margin: 20px auto;
+    font-weight: 900;
+    background-image: linear-gradient(
+        to top right,
+        var(--naranja-strong),
+        var(--fucsia));
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+}
+
+#bio > div {
+    display: grid;
+    place-items: center;
+    margin: 20px;
+}
+
+#bio > div > img {
+    width: 270px;
+}
+
+#bio > div > h3 {
+    color: var(--wine);
+    font-size: 21px;
+    padding: 0 50px;
+}
+
+#bio > div > p {
+    font-size: 18px;
+    padding: 0 50px;
+    text-align: left;
+    color: var(--wine);
+    transition: all .2s linear;
+}
+
+/* BIO */
+
 
 
 
@@ -617,8 +671,8 @@ main > .white-btn {
     background-image: 
         linear-gradient(
             to bottom right, 
-            var(--naranja0), 
-            var(--fucsia0));
+            var(--fucsia), 
+            var(--violeta));
 }
 
 #cuenta-regresiva > h2 {
@@ -709,7 +763,41 @@ main > .white-btn {
     bottom: 0;
 }
 
+#cuenta-regresiva > .white-btn {
+    margin: 20px auto 50px;
+}
+
 /* CUENTA REGRESIVA */
+
+
+
+/* FOOTER */
+
+footer {
+    font-size: 16px;
+    background-color: var(--violeta);
+    display: grid;
+    place-items: center;
+    padding: 20px 0;
+}
+
+#footer-icons {
+    font-size: 30px;
+    margin-bottom: 10px;
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* FOOTER */
+
+
 
 /* MODAL CONTACTO */
 
@@ -730,6 +818,10 @@ main > .white-btn {
             var(--fucsia),
             var(--violeta)
         );
+}
+
+#contact-modal > img {
+    width: 250px;
 }
 
 #form-container {
@@ -756,7 +848,7 @@ main > .white-btn {
     text-align: center;
     font-weight: 700;
     font-size: 30px;
-    margin: 50px auto;
+    margin: 30px auto;
 }
 
 label {
@@ -794,7 +886,7 @@ input {
 }
 
 #submit {
-    margin: 50px;
+    margin: 30px;
     padding: 18px;
     width: 230px;
     border-radius: 12px;
@@ -841,6 +933,14 @@ input {
 
     main > p {
         font-size: 18px;
+    }
+
+    #info1 {
+        padding-bottom: 50px;
+    }
+
+    #info1 > h2 {
+        width: 700px;
     }
 
     #itinerario > p {
@@ -932,6 +1032,7 @@ input {
     }
 
     #info1 > h2 {
+        width: 40vw;
         font-size: 36px;
     }
 
@@ -955,11 +1056,6 @@ input {
 
 
     /* ITINERARIO */
-
-    #itinerario {
-        padding-top: 50px;
-        padding-bottom: 100px;
-    }
 
     #itinerario > h2 {
         font-size: 36px;

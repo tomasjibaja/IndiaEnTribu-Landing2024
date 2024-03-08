@@ -108,7 +108,8 @@ const citiesText = {
         cityText.style.color = "transparent";
         setTimeout(() => {
             cityText.innerHTML = 
-            `SPARE DESCRIPTION`;
+            `<strong>Retiro</strong><br><br>
+            "Aremo un retiro"`;
             cityText.style.color = "#724";
         }, 300);
     }
