@@ -32,7 +32,6 @@ html {
 }
 
 body {
-    height: 100vh;
     padding: 0;
     margin: 0;
 }
@@ -983,11 +982,45 @@ input {
         font-size: 16px;
     }
 
-    
+    #bio > div > img {
+        width: 400px;
+    }
+
+    #bio > div > h3 {
+        font-size: 30px;
+    }
+
+    #bio > div > p {
+        width: 500px;
+    }
 
     #countdown > h3 {
         margin-top: 0;
         margin-bottom: 0;
+    }
+
+    #cuenta-regresiva::after {
+        content: '';
+        opacity: 1;
+        background-image: url(./img/mandala.png);
+        background-position: right;
+        background-size: cover;
+        height: 100%;
+        width: 200px;
+        position: absolute;
+        left: 0;
+    }
+
+    #cuenta-regresiva::before {
+        content: '';
+        opacity: 1;
+        background-image: url(./img/mandala.png);
+        background-position: left;
+        background-size: cover;
+        height: 100%;
+        width: 200px;
+        position: absolute;
+        right: 0;
     }
 
     .card:nth-of-type(1) {
@@ -1005,6 +1038,10 @@ input {
     #info2 > h2 {
         font-size: 45px;
     }
+
+    #contact-modal > img {
+        width: 100vw;
+    }
     
 }
 
@@ -1012,6 +1049,19 @@ input {
 /* DESKTOP */
 @media only screen and (min-width: 1024px) {
 
+    .white-btn {
+        font-size: 36px;
+        font-weight: 700;
+        width: 300px;
+        transition: all .5s ease;
+    }
+
+    .white-btn:hover {
+        transform: scale(1.2);
+        box-shadow: 0 7px 12px 7px var(--black-20);
+        background-color: var(--white-30);
+        color: #fff;
+    }
 
     /* MAIN */
     main {
@@ -1044,6 +1094,7 @@ input {
     /* INFO1 */
 
     #info1 {
+        padding: 150px;
         display: grid;
         place-items: center;
         position: relative;
@@ -1078,12 +1129,12 @@ input {
 
     #info1 > h2 {
         width: 40vw;
-        font-size: 36px;
+        font-size: 45px;
     }
 
     #info1 > p {
         max-width: 40vw;
-        font-size: 18px;
+        font-size: 21px;
     }
 
     #info1 > strong {
@@ -1095,20 +1146,25 @@ input {
     /* HERO1 */
 
     #hero1 {
-        background-image: url(./img/arcMajal.jpg);
+        background-image: url(./img/cards/rishikesh.jpg);
         background-position: 50% 45%;
+        opacity: .7;
     }
 
 
     /* ITINERARIO */
 
+    #itinerario {
+        padding: 100px 0;
+    }
+
     #itinerario > h2 {
-        font-size: 36px;
+        font-size: 45px;
     }
 
     #itinerario > p {
         position: absolute;
-        top: 200px;
+        top: 300px;
         right: 5vw;
         font-size: 18px;
         line-height: 21px;
@@ -1130,7 +1186,7 @@ input {
         width: 350px;
         position: absolute;
         right: 6vw;
-        bottom: 150px;
+        bottom: 250px;
         transform: translateX(-9px);
         transition: all .5s ease;
     }
@@ -1181,7 +1237,7 @@ input {
     #selected-card {
         position: absolute;
         left: 5vw;
-        top: 180px;
+        top: 300px;
         width: calc(83vw - 400px);
         height: 80lvh;
         border-radius: 27px;
@@ -1222,4 +1278,226 @@ input {
         opacity: 0;
         z-index: -1;
     }
+
+
+    /* INFO2 */
+
+    #info2 {
+        place-items: start;
+        padding: 50px 10vw;
+    }
+
+    #info2::after {
+        content: '';
+        width: 40vw;
+        height: 90vh;
+        position: absolute;
+        right: 7vw;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background-image: url(./img/colgante.png);
+        background-size: cover;
+        opacity: .2;
+        filter: brightness(0);
+    }
+
+    #info2 > h2 {
+        font-size: 70px;
+    }
+
+    #info2 > p, #info2 > h4, #info2 > ul > li {
+        font-size: 21px;
+        max-width: 900px;
+    }
+
+    /* BIO */
+
+    #bio > h2 {
+        font-size: 45px;
+        width: 500px;
+        margin: 100px auto;
+    }
+
+    #bio > div {
+        border: 3px solid var(--violeta-70);
+        width: 60vw;
+        margin: 50px auto;
+        border-radius: 50px;
+        display: flex;
+        padding: 10px 40px;
+        position: relative;
+        background-color: var(--fucsia-20);
+    }
+
+    #bio > div > img {
+        width: 500px;
+    }
+
+    #bio > div > h3 {
+        position: absolute;
+        font-size: 36px;
+        filter:
+            drop-shadow(3px 3px 1px var(--naranja-soft))
+            drop-shadow(-3px 3px 1px var(--fucsia-50));
+        top: 1vh;
+    }
+
+    #lu-bio > h3 {
+        right: 1vw;
+    }
+
+    #flor-bio > h3 {
+        left: 1vw;
+    }
+
+    #bio > div > p {
+        font-size: 21px;
+    }
+
+    #flor-bio {
+        flex-direction: row-reverse;
+    }
+
+    /* CUENTA REGRESIVA */
+    #countdown-wrapper > h3 {
+        font-size: 45px;
+    }
+
+    #countdown {
+        transform: scale(1.6);
+    }
+
+    #cd-animation {
+        transform: scale(1.2);
+    }
+
+    #cuenta-regresiva {
+        overflow: hidden;
+    }
+
+    #cuenta-regresiva > .white-btn {
+        width: 350px;
+        height: 100px;
+    }
+
+    #cuenta-regresiva::after {
+        content: '';
+        opacity: 1;
+        background-image: url(./img/mandala.png);
+        background-position: right;
+        background-size: cover;
+        height: 100%;
+        width: 200px;
+        position: absolute;
+        left: 0;
+    }
+
+    #cuenta-regresiva::before {
+        content: '';
+        opacity: 1;
+        background-image: url(./img/mandala.png);
+        background-position: left;
+        background-size: cover;
+        height: 100%;
+        width: 200px;
+        position: absolute;
+        right: 0;
+    }
+
+
+    /* FOOTER */
+
+    #footer-icons {
+        font-size: 40px;
+        width: 200px;
+    }
+
+    #footer-icons > a {
+        transition: all .2s ease;
+        filter: drop-shadow(0 0 0 transparent);
+    }
+
+    #footer-icons > a:hover {
+        filter: drop-shadow(0 0 3px var(--white-70));
+        transform: scale(1.2);
+    }
+
+    /* MODAL CONTACTO */
+    #contact-modal {
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    #contact-modal > img {
+        position: relative;
+        height: 80vh;
+        opacity: 1;
+        filter: contrast(1.2) saturate(1.2);
+        border: 2px solid var(--white-70);
+        border-radius: 30px;
+    }
+
+    #form-container {
+        position: relative;
+        height: 80vh;
+        width: 500px;
+        border-radius: 30px;
+        border-width: 2px;
+    }
+/*  copy   */
+    #form-cross {
+        font-size: 50px;
+        top: 30px;
+        right: 60px;
+    }
+    
+    #form-title {
+        font-size: 25px;
+        margin-bottom: 100px;
+    }
+    
+    label {
+        font-size: 18px;
+        margin-left: 3px;
+    }
+    
+    .form-field {
+        border-radius: 7px;
+        width: 400px;
+        height: 50px;
+        line-height: 30px;
+        font-size: 30px;
+        font-weight: 300;
+        padding-left: 9px;
+        margin-bottom: 50px;
+    }
+    
+    .form-field:focus {
+        outline-color: var(--black-20);
+    }
+    
+    .form-field:valid {
+        outline: 1px solid olivedrab;
+    }
+    
+    #submit {
+        margin: 100px auto;
+        width: 200px;
+        border-radius: 40px;
+        border: 2px solid rgba(250,200,225,.5);
+        background-image: 
+            linear-gradient(
+                to right,
+                var(--fucsia0),
+                var(--violeta)
+            );
+        color: var(--white-90);
+        font-size: 30px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
 }
