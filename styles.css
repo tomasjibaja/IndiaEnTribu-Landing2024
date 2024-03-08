@@ -1041,6 +1041,11 @@ input {
 
     #contact-modal > img {
         width: 100vw;
+        height: auto;
+    }
+
+    #form-container {
+        transform: scale(1.2);
     }
     
 }
@@ -1186,7 +1191,7 @@ input {
         width: 350px;
         position: absolute;
         right: 6vw;
-        bottom: 250px;
+        bottom: 180px;
         transform: translateX(-9px);
         transition: all .5s ease;
     }
@@ -1308,7 +1313,6 @@ input {
 
     #info2 > p, #info2 > h4, #info2 > ul > li {
         font-size: 21px;
-        max-width: 900px;
     }
 
     /* BIO */
@@ -1321,11 +1325,12 @@ input {
 
     #bio > div {
         border: 3px solid var(--violeta-70);
-        width: 60vw;
+        min-width: 900px;
+        max-width: 70vw;
         margin: 50px auto;
         border-radius: 50px;
         display: flex;
-        padding: 10px 40px;
+        padding: 0px 10px;
         position: relative;
         background-color: var(--fucsia-20);
     }
@@ -1335,24 +1340,27 @@ input {
     }
 
     #bio > div > h3 {
+        margin: 0;
         position: absolute;
         font-size: 36px;
         filter:
             drop-shadow(3px 3px 1px var(--naranja-soft))
             drop-shadow(-3px 3px 1px var(--fucsia-50));
-        top: 1vh;
+        bottom: 7vh;
+        background-color: var(--white-30);
+        border-radius: 9px;
     }
 
     #lu-bio > h3 {
-        right: 1vw;
+        left: 5%;
     }
 
     #flor-bio > h3 {
-        left: 1vw;
+        right: 5%;
     }
 
     #bio > div > p {
-        font-size: 21px;
+        font-size: 18px;
     }
 
     #flor-bio {
@@ -1456,7 +1464,7 @@ input {
     
     #form-title {
         font-size: 25px;
-        margin-bottom: 100px;
+        margin-bottom: 50px;
     }
     
     label {
@@ -1484,7 +1492,7 @@ input {
     }
     
     #submit {
-        margin: 100px auto;
+        margin: 50px auto;
         width: 200px;
         border-radius: 40px;
         border: 2px solid rgba(250,200,225,.5);
