@@ -1,7 +1,6 @@
 // VARIABLES DE FORMULARIO
 const scriptURL = 'https://script.google.com/macros/s/AKfycbyYyY62UQlrx2mq8TXbkyciTvzuTu3_3W-xgLXzWBuihpv-hJmLiWf3hm840NWHKFMzGQ/exec';
 const form = document.forms['contact-form'];
-const formMsg = document.getElementById('form-msg');
 const submitBtn = document.getElementById('submit');
 const formCont = document.getElementById('form-container');
 const contactModal = document.getElementById('contact-modal');
@@ -100,7 +99,7 @@ const citiesText = {
             cityText.innerHTML = 
             `<strong>Rishikesh</strong><br><br>
             "La ciudad de los sabios" Esta ciudad sagrada se encuentra a los pies de los Himalayas y se conoce como la capital del yoga. <br>
-            Aquí visitaremos bazares, templos, cascadas y nos sumergiremos en la profundidad del yoga y la meditación para cerrar el viaje en conexión profunda con el ser. `;
+            Aquí visitaremos bazares, templos, cascadas y nos sumergiremos en la profundidad del yoga y la meditación para cerrar el viaje en conexión profunda con el ser.`;
             cityText.style.color = "#724";
         }, 300);
     },
@@ -109,7 +108,7 @@ const citiesText = {
         setTimeout(() => {
             cityText.innerHTML = 
             `<strong>Retiro</strong><br><br>
-            "Aremo un retiro"`;
+            Para cerrar el viaje en armonía y conexión, realizaremos un retiro de dos días de Yoga y meditación en Rishikesh.`;
             cityText.style.color = "#724";
         }, 300);
     }
@@ -272,11 +271,12 @@ form.addEventListener('submit', e => {
 })
 
 function submitOk() {
-    formCont.classList.remove('blinking');
-    formMsg.innerHTML = `Gracias! Tus datos se cargaron correctamente.`;
-    formMsg.style.opacity = 1;
-
     form.reset();
+    formCont.classList.remove('blinking');
+    formCont.innerHTML = 
+        `<p id="form-title"><strong>Gracias!</strong><br><br>Tus datos se cargaron correctamente.<br><br>Te contactaremos a la brevedad.</p>`;
+    formCont.style.opacity = 1;
+    formCont.style.zIndex = 1;
 }
 
 function showModal() {

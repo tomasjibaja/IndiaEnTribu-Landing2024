@@ -1,6 +1,6 @@
 /* VARIABLES DE COLOR */
 :root {
-    --violeta: #661066;
+    --violeta: rgb(102, 16, 102);
     --naranja-soft: #ffa22c;
     --naranja-strong: #ff6634;
     --fucsia: #eb2492;
@@ -17,6 +17,7 @@
     --black-20: rgba(0,0,0,.2); 
     --fucsia-20: rgba(210,0,120,.2);
     --fucsia-50: rgba(210,0,120,.5);
+    --violeta-70: rgba(102, 16, 102,.7);
 }
 
 
@@ -443,7 +444,7 @@ main > .white-btn {
 
 #cards-container {
     width: 100vw;
-    height: 400px;
+    height: 350px;
     display: grid;
     place-items: center;
     grid-auto-flow: column;
@@ -465,7 +466,7 @@ main > .white-btn {
     margin-bottom: 12px;
     scroll-snap-align: inherit;
     border-radius: 21px;
-    height: 360px;
+    height: 300px;
     width: 80vw;
     display: flex;
     align-items: center;
@@ -570,16 +571,35 @@ main > .white-btn {
 }
 
 #info2 > h2 {
+    position: relative;
     font-size: 30px;
     font-weight: 900;
+    margin-top: 70px;
+}
+
+#info2 > h2:after {
+    content: 'próxima fecha de salida';
+    font-weight: 300;
+    position: absolute;
+    font-size: 16px;
+    width: 300px;
+    left: 0;
+    right: 0;
+    top: -16px;
+}
+
+#info2 > h3 {
+    font-size: 21px;
 }
 
 #info2 li {
     margin: 20px 0;
+    font-size: 18px;
 }
 
 #info2 h4 {
     padding: 0 20px;
+    font-size: 18px;
 }
 
 #info2 > p {
@@ -636,7 +656,7 @@ main > .white-btn {
 
 #bio > div > p {
     font-size: 18px;
-    padding: 0 50px;
+    padding: 0 40px;
     text-align: left;
     color: var(--wine);
     transition: all .2s linear;
@@ -821,7 +841,10 @@ footer a {
 }
 
 #contact-modal > img {
-    width: 250px;
+    position: absolute;
+    top: 0;
+    height: 100lvh;
+    opacity: .3;
 }
 
 #form-container {
@@ -831,7 +854,7 @@ footer a {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    background-color: var(--fucsia-20);
+    background-color: var(--violeta-70);
     border: 1px solid var(--white-30);
     border-radius: 9px;
 }
@@ -846,15 +869,21 @@ footer a {
 
 #form-title {
     text-align: center;
-    font-weight: 700;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 30px;
+}
+
+#form-title > strong {
     font-size: 30px;
-    margin: 30px auto;
+    font-weight: 700;
 }
 
 label {
-    color: var(--white-70);
-    font-size: 12px;
-    margin-left: 50px;
+    color: var(--white-90);
+    font-weight: 500;
+    font-size: 14px;
+    margin-left: 30px;
 }
 
 .form-field {
@@ -886,10 +915,10 @@ input {
 }
 
 #submit {
-    margin: 30px;
+    margin: 30px auto;
     padding: 18px;
-    width: 230px;
-    border-radius: 12px;
+    width: 160px;
+    border-radius: 40px;
     border: 2px solid rgba(250,200,225,.5);
     background-image: 
         linear-gradient(
@@ -935,6 +964,12 @@ input {
         font-size: 18px;
     }
 
+    .white-btn {
+        font-size: 27px;
+        font-weight: 700;
+        width: 210px;
+    }
+
     #info1 {
         padding-bottom: 50px;
     }
@@ -948,6 +983,8 @@ input {
         font-size: 16px;
     }
 
+    
+
     #countdown > h3 {
         margin-top: 0;
         margin-bottom: 0;
@@ -959,6 +996,14 @@ input {
 
     .card:nth-of-type(8) {
         margin-right: calc((100vw - 500px) / 2) ;
+    }
+
+    #info2 {
+        padding: 20px 70px;
+    }
+
+    #info2 > h2 {
+        font-size: 45px;
     }
     
 }
@@ -1050,8 +1095,8 @@ input {
     /* HERO1 */
 
     #hero1 {
-        background-image: url(./img/night.png);
-        background-position: center;
+        background-image: url(./img/arcMajal.jpg);
+        background-position: 50% 45%;
     }
 
 
