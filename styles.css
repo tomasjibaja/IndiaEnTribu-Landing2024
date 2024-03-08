@@ -399,7 +399,7 @@ main > .white-btn {
 
 #itinerario > p {
     font-size: 16px;
-    height: 250px;
+    min-height: 270px;
     width: 270px;
     padding: 18px;
     margin: 10px auto;
