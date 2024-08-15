@@ -5,13 +5,13 @@ const submitBtn = document.getElementById('submit');
 const formCont = document.getElementById('form-container');
 const contactModal = document.getElementById('contact-modal');
 
-// VARIABLES DE COUNTDOWN
-const countdown = document.getElementById('countdown');
-const countdownDays = document.getElementById('cd-d');
-const countdownHours = document.getElementById('cd-h');
-const countdownMinutes = document.getElementById('cd-m');
-const countdownSeconds = document.getElementById('cd-s');
-const countdownPlane = document.getElementById('cd-plane');
+// // VARIABLES DE COUNTDOWN
+// const countdown = document.getElementById('countdown');
+// const countdownDays = document.getElementById('cd-d');
+// const countdownHours = document.getElementById('cd-h');
+// const countdownMinutes = document.getElementById('cd-m');
+// const countdownSeconds = document.getElementById('cd-s');
+// const countdownPlane = document.getElementById('cd-plane');
 
 // VARIABLES DE CARRUSEL
 const hand = document.getElementById('scroll-hand');
@@ -107,8 +107,8 @@ const citiesText = {
         cityText.style.color = "transparent";
         setTimeout(() => {
             cityText.innerHTML = 
-            `<strong>Retiro</strong><br><br>
-            Para cerrar el viaje en armonía y conexión, realizaremos un retiro de dos días de Yoga y meditación en Rishikesh.`;
+            `<strong>Shivaratri</strong><br><br>
+            Celebraremos Maha Shivaratri: una noche de silencio, celebración y profunda meditación. Devotos de todo el mundo viajan a India a estar en presencia de esta poderosa festividad en la cual la energía de Shiva está 100% presente en el planeta. Una experiencia que jamás olvidarás.`;
             cityText.style.color = "#724";
         }, 300);
     }
@@ -250,7 +250,7 @@ const citiesImg = {
     },
     '9' : () => {
         selectedCard.style.zIndex = 1;
-        selectedCard.style.backgroundImage = "url(./img/cards/retiro.jpg)"
+        selectedCard.style.backgroundImage = "url(./img/cards/shivaratri.png)"
         setTimeout(() => {
             selectedCard.style.opacity = 1;
         }, 300);
@@ -265,7 +265,10 @@ form.addEventListener('submit', e => {
     formCont.style.zIndex = -1;
     formCont.classList.add('blinking');
     e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    let lead = new FormData(form);
+    let currentDate = new Date();
+    lead.append("timestamp", currentDate.toLocaleString());
+    fetch(scriptURL, { method: 'POST', body: lead})
     .then(response => submitOk())
     .catch(error => console.error('Error!', error.message))
 })
@@ -290,51 +293,51 @@ function hideModal() {
 }
 
 // COUNTDOWN
-var countdownDate = new Date("Sep 9, 2024 04:00:00").getTime();
+// var countdownDate = new Date("Sep 9, 2024 04:00:00").getTime();
 
-var updateCountdown = setInterval(function() {
-    var now = new Date().getTime();
-    var timeleft = countdownDate - now;
+// var updateCountdown = setInterval(function() {
+//     var now = new Date().getTime();
+//     var timeleft = countdownDate - now;
 
-    var days =
-        Math.floor(timeleft / (1000 * 60 * 60 * 24))
-        .toString();
-    var hours =
-        Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-        .toString().padStart(2,'0');
-    var minutes =
-        Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60))
-        .toString().padStart(2,'0');
-    var seconds =
-        Math.floor((timeleft % (1000 * 60)) / 1000)
-        .toString().padStart(2,'0');
+//     var days =
+//         Math.floor(timeleft / (1000 * 60 * 60 * 24))
+//         .toString();
+//     var hours =
+//         Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+//         .toString().padStart(2,'0');
+//     var minutes =
+//         Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60))
+//         .toString().padStart(2,'0');
+//     var seconds =
+//         Math.floor((timeleft % (1000 * 60)) / 1000)
+//         .toString().padStart(2,'0');
 
-    countdown.innerHTML =
-        `<h3>${days}<span>días</span></h3>
-        <h3>${hours}<span>hs</span></h3>
-        <h3>${minutes}<span>min</span></h3>
-        <h3>${seconds}<span>seg</span></h3>`;
+//     countdown.innerHTML =
+//         `<h3>${days}<span>días</span></h3>
+//         <h3>${hours}<span>hs</span></h3>
+//         <h3>${minutes}<span>min</span></h3>
+//         <h3>${seconds}<span>seg</span></h3>`;
 
-    countdownPlane.style.right = `${days}px`;
+//     countdownPlane.style.right = `${days}px`;
 
-    /* OLD CODE ////////////////////////////////////////
-    var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+//     /* OLD CODE ////////////////////////////////////////
+//     var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+//     var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+//     var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+//     var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
-    countdownDays.innerHTML =
-        days == 1 ? `1<span>día</span>` : `${days}<span>días</span>`;
-    countdownHours.innerHTML =
-        `${hours.toString().padStart(2,'0')}:<span>hs</span>`;
-    countdownMinutes.innerHTML =
-        `${minutes.toString().padStart(2,'0')}:<span>min</span>`;
-    countdownSeconds.innerHTML =
-        `${seconds.toString().padStart(2,'0')}<span>seg</span>`;
-    countdownPlane.style.right = `${days}px`;
-    */
+//     countdownDays.innerHTML =
+//         days == 1 ? `1<span>día</span>` : `${days}<span>días</span>`;
+//     countdownHours.innerHTML =
+//         `${hours.toString().padStart(2,'0')}:<span>hs</span>`;
+//     countdownMinutes.innerHTML =
+//         `${minutes.toString().padStart(2,'0')}:<span>min</span>`;
+//     countdownSeconds.innerHTML =
+//         `${seconds.toString().padStart(2,'0')}<span>seg</span>`;
+//     countdownPlane.style.right = `${days}px`;
+//     */
     
-}, 1000);
+// }, 1000);
 
 
 // CARRUSEL

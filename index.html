@@ -66,7 +66,9 @@
                 <img id="anim-plane" src="./img/plane--.png" alt="">
             </div>
         </div>
-        <p>Una experiencia <b>única</b> que une turismo y espiritualidad</p>
+        <p>Una experiencia <b>única</b> uniendo turismo y espiritualidad</p>
+        <h2>FEBRERO 2025</h2>
+        <h3>ESPECIAL SHIVARATRI</h3>
         <button class="white-btn" onclick="showModal()">MÁS INFO</button>
         <span id="arrow-splash">&#x276F;</span>
     </main>
@@ -132,7 +134,7 @@
             </div>
             <div class="card">
                 <div class="card-select" onclick="selectCard(9)"></div>
-                <span>RETIRO</span>
+                <span>SHIVARATRI</span>
             </div>
         </div>
         <div id="selected-card">
@@ -142,22 +144,24 @@
     </section>
 
     <section id="info2">
-        <h2>SEPTIEMBRE 2024</h2>
+        <h2>DEL 10 DE FEBRERO AL 1 DE MARZO - 2025</h2>
         <h3>INCLUYE:</h3>
         <ul>
-            <li>19 noches de alojamiento en hoteles con desayuno incluido.
+            <li>19 noches de alojamiento en hoteles 4 estrellas.
+            </li>
+            <li>Todas las comidas: desayuno, almuerzo y cena.
             </li>
             <li>Vehículo exclusivo para traslado grupal.
             </li>
             <li>Vuelo Varanasi - Rishikesh.
             </li>
-            <li>Nuestro acompañamiento 24x7.
+            <li>Acompañamiento 24x7 coordinadoras.
             </li>
             <li>Acompañamiento de nuestro tour manager durante todo el viaje.
             </li>
             <li>Sesiones diarias de yoga y meditación.
             </li>
-            <li>Retiro de Yoga y meditación 2 días en Rishikesh.
+            <li>Retiro de Yoga y meditación 2 días en Rishikesh + celebración Maha Shivaratri.
             </li>
             <li>Guías locales de habla hispana. 
             </li>
@@ -173,7 +177,12 @@
             </li>
             <li>Kit de regalos exclusivos India en tribu.
             </li>
+            <li>Chip Internet 1 GB durante todo el viaje.
+            </li>
         </ul>
+        <br>
+        <h3 id="no-incluye">NO INCLUYE: aéreos internacionales, propinas, asistencia al viajero, ningún gasto no mencionado anteriormente.</h3>
+        <br>
         <h4>¿Necesito experiencia previa en yoga, meditación o algún otro conocimiento?</h4>
         <p>¡Para nada! Esta puede ser la puerta de entrada al mundo del yoga. Con mucho amor te guiaremos en este proceso de encuentro con las posturas, los mantras y la meditación.</p>
         <button class="white-btn" onclick="showModal()">MÁS INFO</button>
@@ -184,17 +193,17 @@
         <div id="lu-bio">
             <img src="./img/lubio.png" alt="">
             <h3>LUDMI KONDRA</h3>
-            <p>Soy maestra de registros akashicos y terapias energéticas, profesora de yoga, meditación y canto de mantras hace más de 10 años. Viajé a India por primera vez a mis 24 años y viví un año allí. India transformó mi percepción del mundo y de mi misma de una vez y para siempre. <br><br>Soñé durante muchos años acompañar a otras mujeres a que vivan la experiencia de descubrirse a si mismas mientras descubren la magia de India. Hoy, diez años después de mi primer viaje ese sueño se hace realidad ¡Bienvenidas! Comienza una mágica aventura.</p>
+            <p>Maestra de registros akáshicos y terapias energéticas. Acompaño procesos de sanación para mujeres en sesiones, viajes y retiros. Soy profesora de yoga, meditación y canto de mantras hace más de 10 años.<br><br>Viajé a India por primera vez a mis 24 años, quedando tan fascinada que viví un año allí. India transformó mi percepción del mundo y de mi misma de una vez y para siempre.</p>
         </div>
         <div id="flor-bio">
             <img src="./img/florbio.png" alt="">
             <h3>FLOR FALZETTI</h3>
-            <p>Soy Lic. en administración, instructora de yoga y de técnicas de meditación y respiración. Estudio terapias ayurvédicas, facilito la terapia Marma y hago aperturas de Registros Akashicos. Llevo más de 9 años en este hermoso camino de auto observación, servicio y espiritualidad. Viví en India por más de 6 meses y sentí un gran compromiso por dar a conocer su cultura.<br><br>Te invito a formar parte de esta gran tribu de mujeres donde haremos camino juntas. Este viaje es mucho más que turismo: es un viaje a lo más profundo de tu ser.</p>
+            <p>Soy Lic. en administración, Instructora de meditación y respiración y Yoga. Facilito terapias ayurvédicas como Marma y abhyanga, también hago aperturas de Registros Akashicos. Con más de 9 años en este hermoso camino de la auto observación, servicio y espiritualidad.<br><br>Viví en India por más de 6 meses y sentí un gran compromiso por dar a conocer su cultura.</p>
         </div>
     </section>
     
     <section id="cuenta-regresiva">
-        <div id="countdown-wrapper">
+        <!-- <div id="countdown-wrapper">
             <h3>NOS VAMOS EN</h3>
             <div id="countdown">
                 <h3 id="cd-d"></h3>
@@ -208,8 +217,10 @@
             <img id="cd-plane" src="./img/plane--.png" alt="">
             <img src="./img/lotus--.png" alt="">
             <div id="cd-line"></div>
-        </div>
-        <button class="white-btn" onclick="showModal()">¡ QUIERO IR !</button>
+        </div> -->
+        <h3>¿Querés conocer todos los detalles?</h3>
+        <p>Dejanos tus datos y nos pondremos en contacto.</p>
+        <button class="white-btn" onclick="showModal()">MÁS INFO</button>
     </section>
 
     <div id="hero2"></div>
@@ -238,6 +249,15 @@
     
                 <label for="email">Correo electrónico</label>
                 <input class="form-field" type="email" name="email" required>
+
+                <label for="fecha">¿En que fecha viajarías?</label>
+                <select class="form-field" name="fecha" id="fecha">
+                    <option value="" disabled selected>Selecciona una fecha</option>
+                    <option value="febrero2025">Febrero 2025</option>
+                    <option value="marzo2025">Marzo 2025</option>
+                    <option value="octubre2025">Octubre 2025</option>
+                </select>
+
                 <input type="submit" value="ENVIAR" id="submit">
             </form>
         </div>

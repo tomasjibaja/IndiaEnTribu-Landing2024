@@ -59,7 +59,6 @@ body {
 
 
 
-
 /* ANIMACIONES */
 @keyframes shadow {
     from {filter: drop-shadow(0 9px 7px transparent);}
@@ -301,6 +300,20 @@ main > p {
             drop-shadow(-1px -1px 1px var(--naranja-strong));
 }
 
+main > h2, main > h3 {
+    opacity: 0;    
+    animation: appear .7s ease-in forwards 3s;
+    margin: auto;
+    text-align: center;
+    font-size: 18px;
+}
+
+main > h3 {
+    margin-bottom: 30px;
+    filter: drop-shadow(1px 1px 3px var(--fucsia))
+            drop-shadow(-1px -1px 3px var(--naranja-strong));
+}
+
 main > .white-btn {
     opacity: 0;
     margin: 30px auto;
@@ -517,7 +530,7 @@ main > .white-btn {
 }
 
 .card:nth-of-type(9) {
-    background-image: url(./img/cards/retiro.jpg);
+    background-image: url(./img/cards/shivaratri.png);
     margin-right: 10vw;
 }
 
@@ -571,7 +584,7 @@ main > .white-btn {
 
 #info2 > h2 {
     position: relative;
-    font-size: 30px;
+    font-size: 27px;
     font-weight: 900;
     margin-top: 70px;
 }
@@ -609,6 +622,12 @@ main > .white-btn {
 #info2 > .white-btn {
     margin: 50px auto;
 }
+
+#no-incluye {
+    text-align: center;
+    text-decoration: underline;
+}
+
 /* INFO2 */
 
 
@@ -699,9 +718,19 @@ main > .white-btn {
     margin-top: 50px;
 }
 
+#cuenta-regresiva > h3 {
+    text-align: center;
+    margin-top: 50px;
+}
+
 #fechas > span {
     font-size: 40px;
     text-align: center;
+}
+
+#cuenta-regresiva > p {
+    text-align: center;
+    margin: auto;
 }
 
 #countdown-wrapper {
@@ -908,7 +937,11 @@ label {
     outline: 1px solid olivedrab;
 }
 
-input {
+select {
+    outline: none;
+}
+
+input, select {
     display: block;
     margin: 18px auto;
 }
@@ -961,6 +994,10 @@ input {
 
     main > p {
         font-size: 18px;
+    }
+
+    main > h2, main > h3 {
+        font-size: 21px;
     }
 
     .white-btn {
@@ -1059,7 +1096,15 @@ input {
         font-weight: 700;
         width: 300px;
         transition: all .5s ease;
+        margin-bottom: 30px;
     }
+
+    main > h2, main > h3 {
+        font-size: 36px;
+    }
+
+    main > h3 {
+    margin-bottom: 40px;    }
 
     .white-btn:hover {
         transform: scale(1.2);
@@ -1070,7 +1115,7 @@ input {
 
     /* MAIN */
     main {
-        height: 700px;
+        height: 750px;
     }
     
     #animation-wrapper {
@@ -1308,12 +1353,16 @@ input {
     }
 
     #info2 > h2 {
-        font-size: 70px;
+        font-size: 50px;
     }
 
     #info2 > p, #info2 > h4, #info2 > ul > li {
         font-size: 21px;
     }
+
+    #info2 > h3 {
+        font-size: 30px;
+    } 
 
     /* BIO */
 
@@ -1368,8 +1417,8 @@ input {
     }
 
     /* CUENTA REGRESIVA */
-    #countdown-wrapper > h3 {
-        font-size: 45px;
+    #cuenta-regresiva > h3 {
+        font-size: 40px;
     }
 
     #countdown {
@@ -1382,11 +1431,17 @@ input {
 
     #cuenta-regresiva {
         overflow: hidden;
+        height: 400px;
     }
 
     #cuenta-regresiva > .white-btn {
         width: 350px;
         height: 100px;
+    }
+
+    #cuenta-regresiva > p {
+        font-size: 36px;
+        margin-bottom: 30px;
     }
 
     #cuenta-regresiva::after {
