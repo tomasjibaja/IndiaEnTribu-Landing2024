@@ -1,6 +1,7 @@
 /* VARIABLES DE COLOR */
 :root {
     --violeta: rgb(102, 16, 102);
+    --violetita: #c2148e;
     --naranja-soft: #ffa22c;
     --naranja-strong: #ff6634;
     --fucsia: #eb2492;
@@ -573,7 +574,7 @@ main > .white-btn {
     position: relative;
     display: grid;
     place-items: center;
-    padding: 20px;
+    padding: 30px;
     background-image: linear-gradient(
         to bottom right,
         var(--violeta),
@@ -583,13 +584,15 @@ main > .white-btn {
 }
 
 #info2 > h2 {
+    width: 80vw;
     position: relative;
     font-size: 27px;
     font-weight: 900;
-    margin-top: 70px;
+    margin: auto;
+    text-align: left;
 }
 
-#info2 > h2:after {
+/* #info2 > h2:after {
     content: 'próxima fecha de salida';
     font-weight: 300;
     position: absolute;
@@ -598,7 +601,7 @@ main > .white-btn {
     left: 0;
     right: 0;
     top: -16px;
-}
+} */
 
 #info2 > h3 {
     font-size: 21px;
@@ -626,7 +629,21 @@ main > .white-btn {
 #no-incluye {
     text-align: center;
     text-decoration: underline;
+    margin-bottom: 0;
 }
+
+#no-incluye-container {
+    background-color: var(--violetita);
+    border-radius: 9px;
+    margin: auto;
+    padding: 12px 21px;
+}
+
+#no-incluye-container > p {
+    text-align: center;
+    margin-top: 0;
+}
+
 
 /* INFO2 */
 
